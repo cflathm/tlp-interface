@@ -1,14 +1,87 @@
-/* .App {
-  text-align: center;
+/* Used in every page */
+
+.App {
+  background-color: hsl(270, 100%, 97%);
+  min-height: 100vh;
+  padding: 3vh;
 }
 
-.App-header {
-  background-color: #fff8f4;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.fullpage-card {
+  background-color: white;
+  margin: 2vh 8vw;
+  padding: 35px;
+  border-radius: 4px;
+  min-width: 300px;
+  overflow: hidden;
+
+  -webkit-box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.next-link {
+  position: relative;
+  float: right;
+}
+
+.next-link button {
+  background-color: #005EB8;
+  border-color: #005EB8;
+  margin-top: 30px;
+  position: relative;
+}
+
+.banner {
+  background-color: #522D80;
+  margin: 0 auto;
+  border-radius: 10px;
   color: white;
-} */
+  width: 100%;
+  display: inline-flex;
+  margin-bottom: 20px;
+}
+
+.banner h3 {
+  color: white;
+  padding: 15px;
+  /* position: absolute; */
+  padding-left: 5px;
+  margin: 0;
+}
+
+.banner img {
+  height: 4vw;
+  min-height: 50px;
+  padding: 10px;
+  margin: 0;
+}
+
+.footer {
+  color: grey;
+  text-align: center;
+  padding-top: 0px;
+}
+
+.footer p {
+  margin: 0px;
+}
+
+/* Used first in Recommendations Page */
+
+.fullpage-card .ant-table {
+  margin-bottom: 10vh;
+  margin-left: calc(-60px + 4vw);
+}
+
+#top-pick {
+  background-color: green;
+}
+
+/* Used first in Pathways Page */
+
+.fullpage-card .last-table {
+  margin-bottom: -12vh;
+}
+
+table tr td.ant-table-selection-column-microcredentials {
+  text-align: left;
+}

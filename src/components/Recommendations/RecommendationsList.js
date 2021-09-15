@@ -19,7 +19,7 @@ const data = [
 
 const RecommendationsList = () => {
   return (
-    <div className="RecommendationsList" style={{paddingLeft: 20 + "px", paddingTop: 20 + "px"}}>
+    <div>
       <List
         itemLayout="horizontal"
         dataSource={data}

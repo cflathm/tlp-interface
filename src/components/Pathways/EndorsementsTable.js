@@ -5,6 +5,7 @@ const dataSource = [
     {
       key: '1',
       name: 'STEAM',
+      recommended: '',
       fall21: "STEAM Instructional Design",
       spring22: "STEAM Transdisciplinary Teaching",
       summer22: "STEAM Assessment",
@@ -14,6 +15,7 @@ const dataSource = [
     {
       key: '2',
       name: 'Teacher Leader',
+      recommended: '✔',
       fall21: "Courses A+B",
       spring22: "Course C",
       summer22: "Course D",
@@ -22,6 +24,7 @@ const dataSource = [
     {
       key: '3',
       name: 'Online Teaching',
+      recommended: '',
       fall21: "Courses A+B",
       spring22: "Course C",
       summer22: "Course D",
@@ -34,6 +37,11 @@ const dataSource = [
       title: 'Degree Name',
       dataIndex: 'name',
       key: 'name',
+    },
+    {
+      title: 'Recommended',
+      dataIndex: 'recommended',
+      key: 'recommended',
     },
     {
       title: 'Fall 2021',
@@ -59,7 +67,7 @@ const dataSource = [
 
 const EndorsementsTable = () => {
   return (
-    <div className="EndorsementsTable" style={{padding: 40 + "px", paddingTop: 15 + "px"}}>
+    <div>
       <Table 
       dataSource={dataSource} 
       columns={columns} 
