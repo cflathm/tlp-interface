@@ -44,11 +44,6 @@ const dataSource = [
       key: 'recommended',
     },
     {
-      title: 'Fall 2021',
-      dataIndex: 'fall21',
-      key: 'fall21',
-    },
-    {
       title: 'Spring 2022',
       dataIndex: 'spring22',
       key: 'spring22',
@@ -62,6 +57,11 @@ const dataSource = [
       title: 'Fall 2022',
       dataIndex: 'fall22',
       key: 'fall22',
+    },
+    {
+      title: 'Spring 2023',
+      dataIndex: 'spring23',
+      key: 'spring23',
     },
   ];
 

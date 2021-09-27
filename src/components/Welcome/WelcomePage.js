@@ -7,12 +7,12 @@ import Banner from '../Banner/Banner';
 const WelcomePage = () => {
     return (
       <React.Fragment>
-        <div class="fullpage-card">
+        <div className="fullpage-card">
           <Banner/>
           <h2>Welcome to the CU-TLP online platform</h2>
           <h3>Your recommendations are ready</h3>
           <h4 style={{color: "#222222"}}>In the following pages, you can view your recommendations and other options that you can pursue. Then, you will select options that interests you and sign the commitment form.</h4>
-          <Link class="next-link" to="/recommendations">
+          <Link className="next-link" to="/recommendations">
             <Button type="primary">View Recommendations</Button>
           </Link>
         </div> 

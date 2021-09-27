@@ -1,0 +1,19 @@
+{
+    "teacherId": "1",
+    "Opt-Out":false,
+    "Master's Degree":{
+        "option_id": 14,
+        "justification": "Not Interested in Master's Degree; Has Bachelor's Degree; ",
+        "name": "Master's Degree in Education",
+        "category": "Master's Degrees",
+        "description": null,
+        "rec_value": "0.7737809374999999",
+        "courses": [
+            "ED 8650 Curriculum Theory",
+            "EDF 8080 Contemporary Issues in Assessment",
+            "EDF 8020 Learning and Motivation in Context"
+        ]
+    },
+    "Endorsement":false,
+    "Microcredential":false
+}

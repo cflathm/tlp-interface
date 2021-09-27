@@ -1,0 +1,33 @@
+{
+    "teacherId": "1",
+    "Opt-Out":false,
+    "Master's Degree":false,
+    "Endorsement":{
+        "option_id": 3,
+        "justification": "You were not interested in this endorsement.; ",
+        "name": "Teacher Leader",
+        "category": "Endorsements",
+        "description": null,
+        "rec_value": "0.6402838534600861",
+        "courses": [
+            "ED 8750 Elements of Instructional Effectiveness",
+            "ED 8760 Curriculum, Instruction, Assessment, & Learning from a Mentor Perspective",
+            "EDLT 8280 Critical Issues in Instructional Coaching & School Leadership",
+            "EDLT 8290 Reflective Instructional Coaching Practice"
+        ]
+    },
+    "Microcredential":[
+        {
+            "id": 35,
+            "name": "STEM Foundations"
+        },
+        {
+            "id": 36,
+            "name": "STEM Instructional Design"
+        },
+        {
+            "id": 37,
+            "name": "STEM Assessment"
+        }
+    ]
+}
