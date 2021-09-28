@@ -1,90 +1,69 @@
 import React, { Component } from 'react';
 import { Table } from 'antd';
-import { OmitProps } from 'antd/lib/transfer/ListBody';
 
-const dataSource = [
-    {
-      key: '1',
-      name: 'STEAM',
-      recommended: '✔',
-      fall21: "Courses A+B",
-      spring22: "Course C",
-      summer22: "Course D",
-      fall22: "Course E",
-      spring23: "Course F"
-    },
-    {
-      key: '2',
-      name: 'Online Instruction',
-      recommended: '',
-      fall21: "Courses A+B",
-      spring22: "Course C",
-      summer22: "Course D",
-      fall22: "Course E",
-      spring23: "Course F"
-    },
-    {
-      key: '3',
-      name: 'Instructional Coaching',
-      recommended: '',
-      fall21: "Courses A+B",
-      spring22: "Course C",
-      summer22: "Course D",
-      fall22: "Course E",
-      spring23: "Course F"
-    },
-    {
-      key: '4',
-      name: 'Effective and Reflective Teaching',
-      recommended: '',
-      fall21: "Courses A+B",
-      spring22: "Course C",
-      summer22: "Course D",
-      fall22: "Course E",
-      spring23: "Course F"
-    },
-  ];
-  
-  const columns = [
-    {
-      title: 'Degree Name',
-      dataIndex: 'name',
-      key: 'name',
-    },
-    {
-      title: 'Recommended',
-      dataIndex: 'recommended',
-      key: 'recommended',
-    },
-    {
-      title: 'Fall 2021',
-      dataIndex: 'fall21',
-      key: 'fall21',
-    },
-    {
-      title: 'Spring 2022',
-      dataIndex: 'spring22',
-      key: 'spring22',
-    },
-    {
-      title: 'Summer 2022',
-      dataIndex: 'summer22',
-      key: 'summer22',
-    },
-    {
-      title: 'Fall 2022',
-      dataIndex: 'fall22',
-      key: 'fall22',
-    },
-    {
-      title: 'Spring 2023',
-      dataIndex: 'spring23',
-      key: 'spring23',
-    }
-  ];
+/* TODO
+  1) modify MastersDegreesTable so that multiple courses can be displayed in one courseTerm column
+  2) Change "recommended" column to implement color scale
+*/
 
 const MastersDegreeTable = (props) => {
-  return (
+  // populate courseTermNames and 
+  let courseTermNames = []
+
+  props.mastersDegrees.forEach(degree => {
+    degree.courses.forEach(course => {
+      let courseTerm = course.term + " " + course.year;
+      if(!courseTermNames.includes(courseTerm)){
+        courseTermNames.push(courseTerm)
+      }
+    })
+  })
+  
+  let columns = courseTermNames.map(col => {
+    return {
+      title: col,
+      dataIndex: col,
+      key: col
+    }
+  })
+  columns.unshift({
+    title: 'Degree Name',
+    dataIndex: 'name',
+    key: 'name'
+  },{
+    title: 'Recommended',
+    dataIndex: 'recommended',
+    key: 'recommended'
+  })
+
+  const dataSource = 
+    props.mastersDegrees.map(degree => {
+      let recommended = degree.rec_pos
+      let row = {
+        name: degree.name,
+        dataIndex: degree.option_id,
+        key: degree.option_id,
+        recommended: recommended
+      }
+
+
+      // adds each course to row
+      degree.courses.forEach(course => {
+        let courseTerm = course.term + " " + course.year;
+        // broken code meant to check if an entry for a courseTerm exists. If so, it appends course.name 
+        // or it would, if it weren't broken
+        // if(row[courseTerm] != ''){
+        //   console.log(row[courseTerm])
+        // } else {
+        //   row[courseTerm] = course.name
+        // }
+        row[courseTerm] = course.name
+      })
+      // console.log("row",row)
+      return row;
+    })
+
+    return (
     <div>
       <Table 
       dataSource={dataSource} 

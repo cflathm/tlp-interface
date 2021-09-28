@@ -1,17 +1,17 @@
 import React from 'react';
-import { Button } from 'antd';
+import { Button, ConfigProvider } from 'antd';
 import { Link, withRouter } from "react-router-dom";
 import RecommendationsList from './RecommendationsList';
 import Banner from '../Banner/Banner';
 
-const RecommendationsPage = () => {
+const RecommendationsPage = (props) => {
     return (
       <React.Fragment>
         <div className="fullpage-card">
             <Banner/>
             <h2>Your Recommendations</h2>
             <h4 style={{color: "#222222"}}>The system generated the following recommendations for you to pursue. These recommendations are ranked, so that the first recommendation is expected to suit you most.</h4>
-            <RecommendationsList/>
+            <RecommendationsList recommendations={props.recommendations}/>
             <Link className="next-link" to="/" style={{float: "left"}}>
               <Button type="primary">Back</Button>
             </Link>

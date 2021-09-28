@@ -5,9 +5,13 @@ import MastersDegreeTable from './MastersDegreeTable';
 import EndorsementsTable from './EndorsementsTable';
 import MicrocredentialsTable from './MicrocredentialsTable';
 import Banner from '../Banner/Banner';
+/*
+TODO:
+  1) prevent ppl from submitting invalid schedules (clear one table if a row from another is selected, etc)
+*/
 
-
-const PathwaysPage = () => {
+const PathwaysPage = (props) => {
+  console.log('courses', props)
   return (
     <React.Fragment>
       <div className="fullpage-card">
@@ -16,7 +20,7 @@ const PathwaysPage = () => {
 
           <h3>Master's Degrees</h3>
           <h4 style={{color:"grey"}}>A 5-semester commitment that results in a degree (can optionally be combined with up to 3 micro-credentials)</h4>
-          <MastersDegreeTable recommended={1}/>
+          <MastersDegreeTable mastersDegrees={props.courses["Master's Degree"]} recommended={1}/>
 
           <h3>Endorsements</h3>
           <h4 style={{color:"grey"}}>A specialized track of courses that results in a certificate (can optionally be combined with up to 3 micro-credentials)</h4>
