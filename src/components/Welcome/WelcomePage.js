@@ -1,11 +1,10 @@
 import React from 'react';
 import { Button } from 'antd';
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Banner from '../Banner/Banner';
 
 
 const WelcomePage = (props) => {
-  console.log(props);
     return (
       <React.Fragment>
         <div className="fullpage-card">

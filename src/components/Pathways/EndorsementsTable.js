@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Table } from 'antd';
 
 const dataSource = [
@@ -65,13 +65,21 @@ const dataSource = [
     },
   ];
 
-const EndorsementsTable = () => {
+
+
+const EndorsementsTable = (props) => {
   return (
     <div>
       <Table 
       dataSource={dataSource} 
       columns={columns} 
-      rowSelection={{type: "radio"}}
+      scroll={{ x: 700 }}
+      rowSelection={{
+        type: "radio",
+        onChange: (record) => {
+          props.setChoice(parseInt(record[0]));
+        }
+    }}
       pagination={{ hideOnSinglePage: true}}
       />
     </div>

@@ -1,9 +1,12 @@
 import React from 'react';
-import { Table, Checkbox } from 'antd';
+import { Checkbox } from 'antd';
 
 function onChange(e) {
   console.log(`checked = ${e.target.checked}`);
 }
+
+// TODO: Refactor into normal Ant Design Table component. Use render: keyvaluepair in 
+//<Table/> to add checkboxes to all cells
 
 const MicrocredentialsTable = () => {
   return (

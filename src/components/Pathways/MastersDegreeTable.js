@@ -1,25 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Table } from 'antd';
 
 /* TODO
-  1) modify MastersDegreesTable so that multiple courses can be displayed in one courseTerm column
+  1) abstract helper functions for use in endorsementsTable and microcredentialsTable
   2) Change "recommended" column to implement color scale
 */
 
-const MastersDegreeTable = (props) => {
-  // populate courseTermNames and 
-  let courseTermNames = []
-
-  props.mastersDegrees.forEach(degree => {
+// helper functions //////////////////////////////////////////////
+const getCourseTermNames = (degrees) => {
+  const courseTermNames = []
+  degrees.forEach(degree => {
     degree.courses.forEach(course => {
-      let courseTerm = course.term + " " + course.year;
+      const courseTerm = course.term + " " + course.year;
       if(!courseTermNames.includes(courseTerm)){
         courseTermNames.push(courseTerm)
       }
     })
   })
-  
-  let columns = courseTermNames.map(col => {
+  return courseTermNames
+}
+
+const generateTableColumns = (courseTermNames) => {
+  const columns = courseTermNames.map(col => {
     return {
       title: col,
       dataIndex: col,
@@ -35,41 +37,57 @@ const MastersDegreeTable = (props) => {
     dataIndex: 'recommended',
     key: 'recommended'
   })
+  return columns
+}
 
-  const dataSource = 
-    props.mastersDegrees.map(degree => {
-      let recommended = degree.rec_pos
-      let row = {
-        name: degree.name,
-        dataIndex: degree.option_id,
-        key: degree.option_id,
-        recommended: recommended
-      }
-
-
-      // adds each course to row
-      degree.courses.forEach(course => {
-        let courseTerm = course.term + " " + course.year;
-        // broken code meant to check if an entry for a courseTerm exists. If so, it appends course.name 
-        // or it would, if it weren't broken
-        // if(row[courseTerm] != ''){
-        //   console.log(row[courseTerm])
-        // } else {
-        //   row[courseTerm] = course.name
-        // }
+const generateTableRows = (degrees) => {
+  return degrees.map(degree => {
+    const recommended = degree.rec_pos
+    const row = {
+      name: degree.name,
+      dataIndex: degree.option_id,
+      key: degree.option_id,
+      recommended: recommended
+    }
+    // adds each course to row
+    degree.courses.forEach(course => {
+      const courseTerm = course.term + " " + course.year;
+      // check if an entry for a courseTerm exists
+      // if so, and append the newest course's name, course.name 
+      if(row[courseTerm] !== undefined){
+        row[courseTerm] += ("\n\n" + course.name + "\n")
+      } else {
         row[courseTerm] = course.name
-      })
-      // console.log("row",row)
-      return row;
+      }
     })
+    return row;
+  })
+}
+
+// end helper functions ///////////////////////////////////////////
+
+// main component
+const MastersDegreeTable = (props) => {
+  const courseTermNames = getCourseTermNames(props.mastersDegrees);
+  const tableColumns = generateTableColumns(courseTermNames);
+  const tableRows = generateTableRows(props.mastersDegrees);
+  // console.log('props',props)
 
     return (
     <div>
       <Table 
-      dataSource={dataSource} 
-      columns={columns} 
-      rowSelection={{type: "radio"}}
-      pagination={{ hideOnSinglePage: true}}/>
+      dataSource={tableRows} 
+      columns={tableColumns} 
+      rowSelection={{
+        type: "radio",
+        onChange: (record) => {
+          // todo: call onChangeHandler
+          // console.log('record in masters table', record)
+          props.setChoice(record[0]);
+        }
+      }}
+      pagination={{ hideOnSinglePage: true}}
+      scroll={{ x: 700 }}/>
     </div>
   )
 }

@@ -5,7 +5,7 @@ const Banner = () => {
     return (
       <React.Fragment>
         <div className="banner">
-            <img src={Paw}/>
+            <img src={Paw} alt="Paw"/>
             <h3>Clemson University's Teacher Learning Progression</h3>
         </div> 
       </React.Fragment>

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button, ConfigProvider } from 'antd';
-import { Link, withRouter } from "react-router-dom";
+import { Button } from 'antd';
+import { Link } from "react-router-dom";
 import RecommendationsList from './RecommendationsList';
 import Banner from '../Banner/Banner';
 

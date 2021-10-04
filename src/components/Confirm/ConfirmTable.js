@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Table } from 'antd';
+
+// CONFIRMTABLE: CHANGE COLUMNS TO BE TERM, YEAR, “pathway” it contributes to, ?confirm checkbox? (prob not)
 
 const dataSource = [
     {
@@ -34,13 +36,14 @@ const dataSource = [
     }
   ];
 
-const ConfirmTable = () => {
+const ConfirmTable = (props) => {
+  console.log('ConfirmTable: props.selectedPathways[0]',props.selectedPathways[0])
   return (
     <div className="last-table">
       <Table 
       dataSource={dataSource} 
       columns={columns} 
-      rowSelection={{type: "radio"}}
+      // rowSelection={{type: "radio"}}
       pagination={{ hideOnSinglePage: true}}/>
     </div>
   )
