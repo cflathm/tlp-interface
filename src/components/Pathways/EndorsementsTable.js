@@ -1,5 +1,7 @@
 import React from 'react';
 import { Table } from 'antd';
+import { getCourseTermNames, generateMastersTableColumns, generateMastersTableRows } from '../../utils/tableUtils';
+
 
 const dataSource = [
     {
@@ -65,19 +67,62 @@ const dataSource = [
     },
   ];
 
+const generateEndorsementColumns = (endorsements) => {
+  const endorsementColumnIndexes = ["1","2","3","4"]
+  const columns = endorsementColumnIndexes.map(col => {
+    let columnTitle = 'Course ' + col;
+    return {
+      title: 'Course ' + col,
+      dataIndex: col,
+      key: col
+    }
+  })
+  columns.unshift({
+    title: 'Endorsement Name',
+    dataIndex: 'name',
+    key: 'name'
+  },{
+    title: 'Recommended',
+    dataIndex: 'recommended',
+    key: 'recommended'
+  })
+  return columns
+}
 
+const generateEndorsementTableRows = (endorsements) => {
+  // this map returns an array of all rows, formatted to match key-value pairs in "dataSource"
+  // for each endorsement in endorsements, return json object
+  return endorsements.map(endorsement => {
+      const recommended = endorsement.rec_pos
+      const row = {
+          name: endorsement.name,
+          dataIndex: endorsement.unique_id,
+          key: endorsement.unique_id,
+          recommended: recommended,
+        }
+      // dynamically adds the course term as a key-value pair for this row
+      endorsement.courses.forEach(course => {
+          row[course.index] = course.name
+      })
+      return row;
+  })
+}
 
 const EndorsementsTable = (props) => {
+  // props && console.log('ndorsmentprops.endorsements',props.endorsements)
+  const tableColumns = generateEndorsementColumns(props.endorsements)
+  const tableRows = generateEndorsementTableRows(props.endorsements);
   return (
     <div>
       <Table 
-      dataSource={dataSource} 
-      columns={columns} 
+      dataSource={tableRows} 
+      columns={tableColumns} 
       scroll={{ x: 700 }}
       rowSelection={{
         type: "radio",
         onChange: (record) => {
-          props.setChoice(parseInt(record[0]));
+          console.log('recordinEndorsementsonChange',record)
+          props.setSelection(record[0]);
         }
     }}
       pagination={{ hideOnSinglePage: true}}
