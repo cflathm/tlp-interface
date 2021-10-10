@@ -1,7 +1,5 @@
 import React from 'react';
 import { Table } from 'antd';
-import { getCourseTermNames, generateMastersTableColumns, generateMastersTableRows, generateCourseTermName } from '../../utils/tableUtils';
-
 
 // CONFIRMTABLE: CHANGE COLUMNS TO BE TERM, YEAR, “pathway” it contributes to, ?confirm checkbox? (prob not)
   
@@ -22,6 +20,10 @@ import { getCourseTermNames, generateMastersTableColumns, generateMastersTableRo
       key: 'terms',
     }
   ];
+
+  const generateCourseTermName = (course) => {
+    return course.term + " " + course.year;
+  }
 
   const generateConfirmTableRows = (userSelections) => {
     // this map returns a json object of all rows, formatted to match key-value pairs in "dataSource"
