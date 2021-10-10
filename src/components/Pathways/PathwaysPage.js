@@ -11,57 +11,27 @@ TODO:
 */
 
 const PathwaysPage = (props) => {
+  const [selectedMastersDegree, setSelectedMastersDegree] = useState([]);
+  const [selectedEndorsement, setSelectedEndorsement] = useState([]);
+  const [selectedMicrocredential, setSelectedMicrocredential] = useState([]);
+  const [selectionIDs, setSelectionIDs] = useState([]);
+  const [selections, setSelections] = useState([]); // this is what we eventually pass to confirmPage
+  const allOptions = Array.from(props.allOptions) 
 
-  const [selectedMastersDegree, setSelectedMastersDegree] = useState(-1);
-  const [selectedEndorsement, setSelectedEndorsement] = useState(-1);
-  const [selectedMicrocredential, setSelectedMicrocredential] = useState(-1);
-  // console.log('selectedMastersDegree, selectedEndorsement, selectedMicrocredential',selectedMastersDegree, selectedEndorsement, selectedMicrocredential)
-
-  const [selectionIDs, setSelectionIDs] = useState([[[]]]);
-  const [selectedPathways, setSelectedPathways] = useState([]);
-  
-
-  
-  // define selectedPathways, which will contain the props.pathways, but .filter()'d to only show ids from props
-  // later we will have a 'validate' function that confirms selectedPathways is valid before user continues
-  let pathways;
-  pathways = Array.from(props.allPathways)
-  // console.log('PATHWAYS: pathwayspage.js',pathways)
-  // console.log('PATHWAYSPAGE: props.allPathways', props.allPathways)
-  // let selectedPathways;
-
-  // handle each state change in masterdegree/endorsement/microcredential selection
-  // useEffect(() => {
-
-  //   setSelectionIDs([selectedMastersDegree, selectedEndorsement, selectedMicrocredential]);
-    
-  //   setSelectedPathways(pathways.filter(pathway => {
-  //     return selectionIDs.includes(pathway.option_id)
-  //   }))
-  //   // console.log('selectedPathways',selectedPathways)
-
-  //   // selectedPathways = new Map(Object.entries(pathways))
-  //   // console.log('props in pathways',props)
-  //   // console.log('useEffect selectedpathways',selectedPathways) DOESNT WORK - INSIDE USEEFFECT
-  // }, [selectedMastersDegree,selectedEndorsement,selectedMicrocredential]);
-
+  // Update selectionIDs when the user makes a selection
   useEffect(() => {
     // console.log('setSelectionIDs',[selectedMastersDegree, selectedEndorsement, selectedMicrocredential])
     setSelectionIDs([selectedMastersDegree, selectedEndorsement, selectedMicrocredential]);
   }, [selectedMastersDegree,selectedEndorsement,selectedMicrocredential]);
 
+  // Update selections when selectionIDs is updated
   useEffect(() => {
-    setSelectedPathways(pathways.filter(pathway => {
-      // console.log("selectionIDs...pathway.option_id",selectionIDs + " ... " + pathway.option_id)
-      // console.log("selectionIDs.includes(pathway.option_id)",selectionIDs.includes(pathway.option_id))
-      return selectionIDs.includes(pathway.unique_id)
+    setSelections(allOptions.filter(pathway => {
+      return selectionIDs.flat().includes(pathway.unique_id)
     }))
   }, [selectionIDs]);
 
-  // TODO: define onChangeHandler
-  // console.log('props in pathways', props)
-  // const options = props.options
-  console.log('selectedPathways right before render',selectedPathways)
+  // console.log('selections right before render',selections)
   return (
     <React.Fragment>
       <div className="fullpage-card">
@@ -77,7 +47,7 @@ const PathwaysPage = (props) => {
           
           <h3>Micro-credentials</h3>
           <h4 style={{color:"grey"}}>Short modules on a specific topic (you can select 1-2 per period, or optionally add max. 1 per period to an MEd or endorsement)</h4>
-          <MicrocredentialsTable pathways={props} setSelection={setSelectedMicrocredential}/>
+          <MicrocredentialsTable pathways={props} setSelectedMicrocredential={setSelectedMicrocredential} selectedMicrocredential={selectedMicrocredential}/>
           <br></br>
           <Link className="next-link" to="/recommendations" style={{float: "left"}}>
               <Button type="primary">Back</Button>
@@ -85,7 +55,7 @@ const PathwaysPage = (props) => {
           <Link className="next-link" to={{ 
             pathname: "/confirm",
             state: {
-              selectedPathways: selectedPathways  
+              selections: selections  
             }
             }} >
             <Button type="primary">Save &amp; Continue</Button>

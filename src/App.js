@@ -17,7 +17,7 @@ TODO:
 function App() {
   // data will hold data from json/api response
   const [data, setData] = useState('');
-  const [allPathways, setallPathways] = useState('');
+  const [allOptions, setallOptions] = useState('');
 
   // borrowed code to fetch json
   const getData=()=>{
@@ -34,15 +34,23 @@ function App() {
       .then(function(myJson) {
         setData(myJson);
 
-        // make allPathways array
+        // make allOptions array
         const pathwayObjects = myJson.data.options;
         // console.log('App.js: pathwayObjects',pathwayObjects)
-        let unflatallPathways = [
+        let unflatAllOptions = [
           pathwayObjects["Endorsement"],
           pathwayObjects["Master's Degree"],
-          pathwayObjects["Microcredential"]
         ]
-        setallPathways(unflatallPathways.flat())
+        // here we are drilling into "Microcredentials" and getting each course out, and pushing the result to unflatAll
+        let coursesInMicrocredential = pathwayObjects["Microcredential"].map(thisRow => {
+          let coursesInThisRow = thisRow.courses.map(course => {
+            return course
+          })
+          return coursesInThisRow
+        })
+        unflatAllOptions.push(coursesInMicrocredential.flat());
+        // console.log("unflatAllOptions after pathwayObjects['Microcredential']",unflatAllOptions);
+        setallOptions(unflatAllOptions.flat())
       });
   }
   useEffect(()=>{
@@ -57,8 +65,8 @@ function App() {
       <Router>
         <Route path="/" exact component={() => data && <WelcomePage firstName={data.data.First_Name} />} />
         <Route path="/recommendations" exact component={() => data && <RecommendationsPage recommendations={data.data.recommendations}/>} />
-        <Route path="/pathways" exact component={() => data && <PathwaysPage pathways={data.data.options} allPathways={allPathways}/>} />
-        <Route path="/confirm" exact component={() => data && <ConfirmPage allPathways={allPathways}/>} />
+        <Route path="/pathways" exact component={() => data && <PathwaysPage pathways={data.data.options} allOptions={allOptions}/>} />
+        <Route path="/confirm" exact component={() => data && <ConfirmPage allOptions={allOptions}/>} />
         <Route path="/submitted" exact component={() => data && <Submitted/>} />
       </Router>
       <div className="footer">

@@ -121,7 +121,6 @@ const EndorsementsTable = (props) => {
       rowSelection={{
         type: "radio",
         onChange: (record) => {
-          console.log('recordinEndorsementsonChange',record)
           props.setSelection(record[0]);
         }
     }}

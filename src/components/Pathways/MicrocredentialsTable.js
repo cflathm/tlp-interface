@@ -1,63 +1,11 @@
 import React, {useState} from 'react';
 import { Table, Checkbox } from 'antd';
 
-const dataSource = [
-    {
-      key: '1',
-      name: 'Integrating Science & Engineering Practices',
-      summer21_2: "Understanding & Integrating Science & Engineering Practices",
-      Fall21_1: "Integrating Project-Based Learning with Science & Engineering Practices",
-      Fall21_2: "Assessment of Science & Engineering Practices",
-    },
-    {
-      key: '2',
-      name: 'Integrating Science & Engineering Practices',
-      summer21_2: "Understanding & Integrating Science & Engineering Practices",
-      Fall21_1: "Integrating Project-Based Learning with Science & Engineering Practices",
-      Fall21_2: "Assessment of Science & Engineering Practices",
-    },
-    {
-      key: '3',
-      name: 'Integrating Science & Engineering Practices',
-      summer21_2: "Understanding & Integrating Science & Engineering Practices",
-      Fall21_1: "Integrating Project-Based Learning with Science & Engineering Practices",
-      Fall21_2: "Assessment of Science & Engineering Practices",
-    },
-    {
-      key: '4',
-      name: 'Integrating Science & Engineering Practices',
-      summer21_2: "Understanding & Integrating Science & Engineering Practices",
-      Fall21_1: "Integrating Project-Based Learning with Science & Engineering Practices",
-      Fall21_2: "Assessment of Science & Engineering Practices",
-    },
-    {
-      key: '5',
-      name: 'Integrating Science & Engineering Practices',
-      summer21_2: "Understanding & Integrating Science & Engineering Practices",
-      Fall21_1: "Integrating Project-Based Learning with Science & Engineering Practices",
-      Fall21_2: "Assessment of Science & Engineering Practices",
-    },
-    {
-      key: '6',
-      name: 'Integrating Science & Engineering Practices',
-      summer21_2: "Understanding & Integrating Science & Engineering Practices",
-      Fall21_1: "Integrating Project-Based Learning with Science & Engineering Practices",
-      Fall21_2: "Assessment of Science & Engineering Practices",
-    },
-    {
-      key: '7',
-      name: 'Integrating Science & Engineering Practices',
-      summer21_2: "Understanding & Integrating Science & Engineering Practices",
-      Fall21_1: "Integrating Project-Based Learning with Science & Engineering Practices",
-      Fall21_2: "Assessment of Science & Engineering Practices",
-    },
-  ];
-
   // ------------------------------------------------------------------------------------
   // help from https://stackoverflow.com/a/63008461/13741755
 
   const MicrocredentialsTable = (props) => {
-    console.log('micro props.microcredentials',props.pathways.pathways.Microcredential)
+    // console.log('micro props.microcredentials',props.pathways.pathways.Microcredential)
     const [checkboxState, setCheckboxState] = useState([
       {
         key: 1,
@@ -68,6 +16,9 @@ const dataSource = [
         summer21_2Name: props.pathways.pathways.Microcredential[0].courses[0].name,
         Fall21_1Name: props.pathways.pathways.Microcredential[0].courses[1].name,
         Fall21_2Name: props.pathways.pathways.Microcredential[0].courses[2].name,
+        summer21_2ID: props.pathways.pathways.Microcredential[0].courses[0].unique_id,
+        Fall21_1ID: props.pathways.pathways.Microcredential[0].courses[1].unique_id,
+        Fall21_2ID: props.pathways.pathways.Microcredential[0].courses[2].unique_id,
       },
       {
         key: 2,
@@ -78,6 +29,9 @@ const dataSource = [
         summer21_2Name: props.pathways.pathways.Microcredential[1].courses[0].name,
         Fall21_1Name: props.pathways.pathways.Microcredential[1].courses[1].name,
         Fall21_2Name: props.pathways.pathways.Microcredential[1].courses[2].name,
+        summer21_2ID: props.pathways.pathways.Microcredential[1].courses[0].unique_id,
+        Fall21_1ID: props.pathways.pathways.Microcredential[1].courses[1].unique_id,
+        Fall21_2ID: props.pathways.pathways.Microcredential[1].courses[2].unique_id,
       },
       {
         key: 3,
@@ -88,6 +42,9 @@ const dataSource = [
         summer21_2Name: props.pathways.pathways.Microcredential[2].courses[0].name,
         Fall21_1Name: props.pathways.pathways.Microcredential[2].courses[1].name,
         Fall21_2Name: props.pathways.pathways.Microcredential[2].courses[2].name,
+        summer21_2ID: props.pathways.pathways.Microcredential[2].courses[0].unique_id,
+        Fall21_1ID: props.pathways.pathways.Microcredential[2].courses[1].unique_id,
+        Fall21_2ID: props.pathways.pathways.Microcredential[2].courses[2].unique_id,
       },
       {
         key: 4,
@@ -98,6 +55,9 @@ const dataSource = [
         summer21_2Name: props.pathways.pathways.Microcredential[3].courses[0].name,
         Fall21_1Name: props.pathways.pathways.Microcredential[3].courses[1].name,
         Fall21_2Name: props.pathways.pathways.Microcredential[3].courses[2].name,
+        summer21_2ID: props.pathways.pathways.Microcredential[3].courses[0].unique_id,
+        Fall21_1ID: props.pathways.pathways.Microcredential[3].courses[1].unique_id,
+        Fall21_2ID: props.pathways.pathways.Microcredential[3].courses[2].unique_id,
       },
       {
         key: 5,
@@ -108,6 +68,9 @@ const dataSource = [
         summer21_2Name: props.pathways.pathways.Microcredential[4].courses[0].name,
         Fall21_1Name: props.pathways.pathways.Microcredential[4].courses[1].name,
         Fall21_2Name: props.pathways.pathways.Microcredential[4].courses[2].name,
+        summer21_2ID: props.pathways.pathways.Microcredential[4].courses[0].unique_id,
+        Fall21_1ID: props.pathways.pathways.Microcredential[4].courses[1].unique_id,
+        Fall21_2ID: props.pathways.pathways.Microcredential[4].courses[2].unique_id,
       },
       {
         key: 6,
@@ -118,6 +81,9 @@ const dataSource = [
         summer21_2Name: props.pathways.pathways.Microcredential[5].courses[0].name,
         Fall21_1Name: props.pathways.pathways.Microcredential[5].courses[1].name,
         Fall21_2Name: props.pathways.pathways.Microcredential[5].courses[2].name,
+        summer21_2ID: props.pathways.pathways.Microcredential[5].courses[0].unique_id,
+        Fall21_1ID: props.pathways.pathways.Microcredential[5].courses[1].unique_id,
+        Fall21_2ID: props.pathways.pathways.Microcredential[5].courses[2].unique_id,
       },
       {
         key: 7,
@@ -128,14 +94,37 @@ const dataSource = [
         summer21_2Name: props.pathways.pathways.Microcredential[6].courses[0].name,
         Fall21_1Name: props.pathways.pathways.Microcredential[6].courses[1].name,
         Fall21_2Name: props.pathways.pathways.Microcredential[6].courses[2].name,
+        summer21_2ID: props.pathways.pathways.Microcredential[6].courses[0].unique_id,
+        Fall21_1ID: props.pathways.pathways.Microcredential[6].courses[1].unique_id,
+        Fall21_2ID: props.pathways.pathways.Microcredential[6].courses[2].unique_id,
       },
-
     ]);
   
     const handleCheckboxChangeFactory = (rowIndex, columnKey, record) => event => {
       const newCheckboxState = [...checkboxState];
       newCheckboxState[rowIndex][columnKey] = event.target.checked;
       setCheckboxState(newCheckboxState);
+      if(columnKey == "summer21_2"){
+        if(record.summer21_2 === true){
+          props.setSelectedMicrocredential(selectedMicro => [...selectedMicro, record.summer21_2ID]);
+        } else {
+          props.setSelectedMicrocredential(props.selectedMicrocredential.filter(thisElement => thisElement != record.summer21_2ID));
+        }
+      }
+      if(columnKey == "Fall21_1"){
+        if(record.Fall21_1 === true){
+          props.setSelectedMicrocredential(selectedMicro => [...selectedMicro, record.Fall21_1ID]);
+        } else {
+          props.setSelectedMicrocredential(props.selectedMicrocredential.filter(thisElement => thisElement != record.Fall21_1ID));
+        }  
+      }
+      if(columnKey == "Fall21_2"){
+        if(record.Fall21_2 === true){
+          props.setSelectedMicrocredential(selectedMicro => [...selectedMicro, record.Fall21_2ID]);
+        } else {
+          props.setSelectedMicrocredential(props.selectedMicrocredential.filter(thisElement => thisElement != record.Fall21_2ID));
+        }
+      }
     };
   
     const columns = [
@@ -152,7 +141,7 @@ const dataSource = [
           <>
             <Checkbox
               checked={value}
-              onChange={handleCheckboxChangeFactory(rowIndex, "summer21_2")}
+              onChange={handleCheckboxChangeFactory(rowIndex, "summer21_2", record)}
             >{record.summer21_2Name}</Checkbox>
           </>
         )
@@ -165,7 +154,7 @@ const dataSource = [
           <>
             <Checkbox
               checked={value}
-              onChange={handleCheckboxChangeFactory(rowIndex, "Fall21_1")}
+              onChange={handleCheckboxChangeFactory(rowIndex, "Fall21_1", record)}
             >{record.Fall21_1Name}</Checkbox>
           </>
         )
@@ -178,7 +167,7 @@ const dataSource = [
           <>
             <Checkbox
               checked={value}
-              onChange={handleCheckboxChangeFactory(rowIndex, "Fall21_2")}
+              onChange={handleCheckboxChangeFactory(rowIndex, "Fall21_2", record)}
             >{record.Fall21_2Name}</Checkbox>
           </>
         )
@@ -188,18 +177,5 @@ const dataSource = [
     <Table pagination={false} columns={columns} dataSource={checkboxState} />
   );
   }
-
-// const MicrocredentialsTable = () => {
-//   return (
-//     <div className="last-table">
-//       <Table 
-//       dataSource={dataSource} 
-//       columns={columns} 
-//       pagination={{ hideOnSinglePage: true}}
-//       />
-//     </div>
-//   )
-// }
-  
   
 export default MicrocredentialsTable;

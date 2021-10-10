@@ -6,12 +6,10 @@ import { getCourseTermNames, generateMastersTableColumns, generateMastersTableRo
   - Change "recommended" column to implement color scale
 */
 
-// main component
 const MastersDegreeTable = (props) => {
   const courseTermNames = getCourseTermNames(props.mastersDegrees);
   const tableColumns = generateMastersTableColumns(courseTermNames);
   const tableRows = generateMastersTableRows(props.mastersDegrees);
-  // console.log('props',props)
 
     return (
     <div>
@@ -22,8 +20,6 @@ const MastersDegreeTable = (props) => {
       rowSelection={{
         type: "radio",
         onChange: (record) => {
-          // todo: call onChangeHandler
-          console.log('record in masters table', record)
           props.setSelection(record[0]);
         }
       }}

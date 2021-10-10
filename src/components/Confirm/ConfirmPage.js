@@ -5,12 +5,12 @@ import ConfirmTable from './ConfirmTable';
 import Banner from '../Banner/Banner';
 
 const ConfirmPage = (props) => {
-  const [selectedPathways, setSelectedPathways] = useState([]);
+  const [selections, setSelections] = useState([]);
 
   const location = useLocation()
-  // let selectedPathways;
+  // let selections;
   useEffect(() => {
-    setSelectedPathways(location.state.selectedPathways)
+    setSelections(location.state.selections)
   }, [location]);
     return (
       <React.Fragment>
@@ -18,7 +18,7 @@ const ConfirmPage = (props) => {
           <Banner/>
             <h2>Schedule Confirmation</h2>
             <h4 style={{color: "#222222"}}>Confirm your schedule and submit</h4>
-            <ConfirmTable allPathways={props.allPathways} selectedPathways={selectedPathways}/>
+            <ConfirmTable allOptions={props.allOptions} selections={selections}/>
             <Link className="next-link" to="/pathways" style={{float: "left"}}>
               <Button type="primary">Back</Button>
             </Link>

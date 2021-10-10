@@ -80,21 +80,24 @@
                         "unique_id": "9_38",
                         "name": "Fostering Transdisciplinary Teaching",
                         "term": "Spring 1",
-                        "year": "2022"
+                        "year": "2022",
+                        "credential_name": "Steam Leadership"
                     },
                     {
                         "id": 39,
                         "unique_id": "9_39",
                         "name": "Developing a STEAM Community",
                         "term": "Spring 2",
-                        "year": "2022"
+                        "year": "2022",
+                        "credential_name": "Steam Leadership"
                     },
                     {
                         "id": 40,
                         "unique_id": "9_40",
                         "name": "Supporting Assessment in STEAM Classrooms",
                         "term": "Summer 1",
-                        "year": "2022"
+                        "year": "2022",
+                        "credential_name": "Steam Leadership"
                     }
                 ]
             }
@@ -364,21 +367,24 @@
                             "unique_id": "9_38",
                             "name": "Fostering Transdisciplinary Teaching",
                             "term": "Spring 1",
-                            "year": "2022"
+                            "year": "2022",
+                            "credential_name": "Steam Leadership"
                         },
                         {
                             "id": 39,
                             "unique_id": "9_39",
                             "name": "Developing a STEAM Community",
                             "term": "Spring 2",
-                            "year": "2022"
+                            "year": "2022",
+                            "credential_name": "Steam Leadership"
                         },
                         {
                             "id": 40,
                             "unique_id": "9_40",
                             "name": "Supporting Assessment in STEAM Classrooms",
                             "term": "Summer 1",
-                            "year": "2022"
+                            "year": "2022",
+                            "credential_name": "Steam Leadership"
                         }
                     ]
                 },
@@ -397,21 +403,24 @@
                             "unique_id": "5_47",
                             "name": "Understanding and Integrating Science and Engineering Practices",
                             "term": "Spring 1",
-                            "year": "2022"
+                            "year": "2022",
+                            "credential_name": "Science Engineering"
                         },
                         {
                             "id": 48,
                             "unique_id": "5_48",
                             "name": "Integrating Project-Based Learning with Science and Engineering Practices",
                             "term": "Spring 2",
-                            "year": "2022"
+                            "year": "2022",
+                            "credential_name": "Science Engineering"
                         },
                         {
                             "id": 49,
                             "unique_id": "5_49",
                             "name": "Assessment of Science and Engineering Practices",
                             "term": "Summer 1",
-                            "year": "2022"
+                            "year": "2022",
+                            "credential_name": "Science Engineering"
                         }
                     ]
                 },
@@ -430,21 +439,24 @@
                             "unique_id": "8_44",
                             "name": "Introduction to Online Teaching",
                             "term": "Spring 1",
-                            "year": "2022"
+                            "year": "2022",
+                            "credential_name": "Online Teaching"
                         },
                         {
                             "id": 45,
                             "unique_id": "8_45",
                             "name": "Differentiated Online Teaching Practices",
                             "term": "Spring 2",
-                            "year": "2022"
+                            "year": "2022",
+                            "credential_name": "Online Teaching"
                         },
                         {
                             "id": 46,
                             "unique_id": "8_46",
                             "name": "Engaging Students in Online Learning Spaces",
                             "term": "Summer 1",
-                            "year": "2022"
+                            "year": "2022",
+                            "credential_name": "Online Teaching"
                         }
                     ]
                 },
@@ -463,21 +475,24 @@
                             "unique_id": "10_41",                          
                             "name": "Understanding SEL & the Impact of Adverse Childhood Experiences (ACES)",
                             "term": "Spring 1",
-                            "year": "2022"
+                            "year": "2022",
+                            "credential_name": "Socio Emotional"
                         },
                         {
                             "id": 42,
                             "unique_id": "10_42",
                             "name": "Classroom Strategies to Promote SEL",
                             "term": "Spring 2",
-                            "year": "2022"
+                            "year": "2022",
+                            "credential_name": "Socio Emotional"
                         },
                         {
                             "id": 43,
                             "unique_id": "10_43",
                             "name": "Addressing SEL through the Lens of Equity, Diversity, & Inclusion",
                             "term": "Summer 1",
-                            "year": "2022"
+                            "year": "2022",
+                            "credential_name": "Socio Emotional"
                         }
                     ]
                 },
@@ -494,17 +509,20 @@
                         {
                             "id": 35,
                             "unique_id": "11_35",
-                            "name": "STEM Foundations"
+                            "name": "STEM Foundations",
+                            "credential_name": "Steam Teaching"
                         },
                         {
                             "id": 36,
                             "unique_id": "11_36",
-                            "name": "STEM Instructional Design"
+                            "name": "STEM Instructional Design",
+                            "credential_name": "Steam Teaching"
                         },
                         {
                             "id": 37,
                             "unique_id": "11_37",
-                            "name": "STEM Assessment"
+                            "name": "STEM Assessment",
+                            "credential_name": "Steam Teaching"
                         }
                     ]
                 },
@@ -523,21 +541,24 @@
                             "unique_id": "7_56",
                             "name": "Engaging Students in Data Analysis, Statistics, and Probability",
                             "term": "Spring 2",
-                            "year": "2022"
+                            "year": "2022",
+                            "credential_name": "Computer Science"
                         },
                         {
                             "id": 54,
                             "unique_id": "7_54",
                             "name": "Advanced Coding with Text-Based Programming",
                             "term": "Spring 2",
-                            "year": "2022"
+                            "year": "2022",
+                            "credential_name": "Computer Science"
                         },
                         {
                             "id": 55,
                             "unique_id": "7_55",
                             "name": "Integrating Computational Thinking into Math and Science",
                             "term": "Summer 1",
-                            "year": "2022"
+                            "year": "2022",
+                            "credential_name": "Computer Science"
                         }
                     ]
                 },
@@ -556,21 +577,24 @@
                             "unique_id": "6_50",
                             "name": "Engaging Students in Mathematics through Career Snapshots",
                             "term": "Spring 1",
-                            "year": "2022"
+                            "year": "2022",
+                            "credential_name": "Math"
                         },
                         {
                             "id": 53,
                             "unique_id": "6_53",
                             "name": "Introduction to Coding with Block-Based Programming",
                             "term": "Spring 1",
-                            "year": "2022"
+                            "year": "2022",
+                            "credential_name": "Math"
                         },
                         {
                             "id": 52,
                             "unique_id": "6_52",
                             "name": "Using Formative Assessment Strategies to Engage Students in Mathematics",
                             "term": "Summer 1",
-                            "year": "2022"
+                            "year": "2022",
+                            "credential_name": "Math"
                         }
                     ]
                 }

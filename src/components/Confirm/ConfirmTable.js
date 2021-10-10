@@ -4,21 +4,6 @@ import { getCourseTermNames, generateMastersTableColumns, generateMastersTableRo
 
 
 // CONFIRMTABLE: CHANGE COLUMNS TO BE TERM, YEAR, “pathway” it contributes to, ?confirm checkbox? (prob not)
-
-const dataSource = [
-    {
-      key: '1',
-      name: 'Masters Degree in Education: Online Instruction',
-      category: "Master's Degree",
-      term: 'Fall 2022'
-    },
-    {
-      key: '2',
-      name: 'STEAM Leadership Micro-Credentials',
-      category: "Micro-Credential",
-      term: 'Summer 2022'
-    },
-  ];
   
   const columns = [
     {
@@ -38,30 +23,48 @@ const dataSource = [
     }
   ];
 
-
-  const generateConfirmTableRows = (selections) => {
+  const generateConfirmTableRows = (userSelections) => {
     // this map returns a json object of all rows, formatted to match key-value pairs in "dataSource"
     // for each pathway in pathways, return json object
-    const selectedPathway = selections.map(selection => {
+    console.log(userSelections)
+    const selectedPathway = userSelections.map(selection => {
       // console.log('selection', selection)
       let pathway = [];
-      selection.courses.forEach(course => {
-        let terms = ''
-        if(generateCourseTermName(course)!='undefined undefined'){
-          terms = generateCourseTermName(course)
+      if(selection.courses){
+        selection.courses.forEach(course => {
+          let terms = ''
+          if(generateCourseTermName(course)!='undefined undefined'){
+            terms = generateCourseTermName(course)
+          } else {
+            terms = 'TBD'
+          }
+          // console.log('thiscourse',course)
+          pathway.push( {
+            name: course.name,
+            dataIndex: course.option_id,
+            key: course.unique_id,
+            pathwayName: selection.name,
+            terms: terms
+          })
+          // console.log('this pathway',pathway)
+      });
+    } else {
+      // if this selection has no "courses" field (IE a micro-credential)
+      let terms = ''
+        if(generateCourseTermName(selection)!='undefined undefined'){
+          terms = generateCourseTermName(selection)
         } else {
           terms = 'TBD'
         }
-        // console.log('thiscourse',course)
+        // console.log('thisselection',selection)
         pathway.push( {
-          name: course.name,
-          dataIndex: course.option_id,
-          key: selection.category + course.id,
-          pathwayName: selection.name,
+          name: selection.name,
+          dataIndex: selection.option_id,
+          key: selection.unique_id,
+          pathwayName: selection.credential_name,
           terms: terms
-      })
-        // console.log('this pathway',pathway)
-      });
+        })
+    }
       return pathway;
     });
     return selectedPathway.flat();
@@ -69,14 +72,14 @@ const dataSource = [
 
 
 const ConfirmTable = (props) => {
-  // console.log('ConfirmTable: props.selectedPathways',props.selectedPathways)
-  const dataSource2 = generateConfirmTableRows(props.selectedPathways)
-  // console.log('dataSource2',dataSource2)
+  // console.log('ConfirmTable: props.selections',props.selections)
+  const dataSource = generateConfirmTableRows(props.selections)
+  // console.log('dataSource',dataSource)
   return (
     <div className="last-table">
       <Table 
       scroll={{ x: 700 }}
-      dataSource={dataSource2} 
+      dataSource={dataSource} 
       columns={columns} 
       // rowSelection={{type: "radio"}}
       pagination={{ hideOnSinglePage: true}}
