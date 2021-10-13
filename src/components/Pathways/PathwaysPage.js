@@ -43,8 +43,7 @@ const PathwaysPage = (props) => {
           <MastersDegreeTable mastersDegrees={props.pathways["Master's Degree"]} recommended={1} setSelection={setSelectedMastersDegree}/>
           <h3>Endorsements</h3>
           <h4 style={{color:"grey"}}>A specialized track of pathways that results in a certificate (can optionally be combined with up to 3 micro-credentials)</h4>
-          <EndorsementsTable endorsements={props.pathways["Endorsement"]} setSelection={setSelectedEndorsement}/>
-          
+          <EndorsementsTable endorsements={props.pathways["Endorsement"]} allOptions={props.allOptions} setSelection={setSelectedEndorsement}/>
           <h3>Micro-credentials</h3>
           <h4 style={{color:"grey"}}>Short modules on a specific topic (you can select 1-2 per period, or optionally add max. 1 per period to an MEd or endorsement)</h4>
           <MicrocredentialsTable pathways={props} setSelectedMicrocredential={setSelectedMicrocredential} selectedMicrocredential={selectedMicrocredential}/>

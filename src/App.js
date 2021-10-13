@@ -33,6 +33,7 @@ function App() {
       })
       .then(function(myJson) {
         setData(myJson);
+        // console.log(myJson)
 
         // make allOptions array
         const pathwayObjects = myJson.data.options;

@@ -1,88 +1,44 @@
 import React from 'react';
 import { Table } from 'antd';
 
-const dataSource = [
-    {
-      key: '1',
-      name: 'STEAM',
-      recommended: '',
-      fall21: "STEAM Instructional Design",
-      spring22: "STEAM Transdisciplinary Teaching",
-      summer22: "STEAM Assessment",
-      fall22: "STEAM Enacted & Evaluated",
-      spring23: "Course F"
-    },
-    {
-      key: '2',
-      name: 'Teacher Leader',
-      recommended: '✔',
-      fall21: "Courses A+B",
-      spring22: "Course C",
-      summer22: "Course D",
-      fall22: "Course E",
-    },
-    {
-      key: '3',
-      name: 'Online Teaching',
-      recommended: '',
-      fall21: "Courses A+B",
-      spring22: "Course C",
-      summer22: "Course D",
-      fall22: "Course E",
-    },
-  ];
-  
-  const columns = [
-    {
-      title: 'Degree Name',
-      dataIndex: 'name',
-      key: 'name',
-    },
-    {
-      title: 'Recommended',
-      dataIndex: 'recommended',
-      key: 'recommended',
-    },
-    {
-      title: 'Spring 2022',
-      dataIndex: 'spring22',
-      key: 'spring22',
-    },
-    {
-      title: 'Summer 2022',
-      dataIndex: 'summer22',
-      key: 'summer22',
-    },
-    {
-      title: 'Fall 2022',
-      dataIndex: 'fall22',
-      key: 'fall22',
-    },
-    {
-      title: 'Spring 2023',
-      dataIndex: 'spring23',
-      key: 'spring23',
-    },
-  ];
+const generateCourseTermName = (course) => {
+  return course.term + " " + course.year;
+}
 
 const generateEndorsementColumns = (endorsements) => {
-  const endorsementColumnIndexes = ["1","2","3","4"]
-  const columns = endorsementColumnIndexes.map(col => {
-    let columnTitle = 'Course ' + col;
+  const termIndexes = {
+    "Spring 1 2022": 1,
+    "Spring 2 2022": 2,
+    "Summer 1 2022": 3,
+    "Spring 2 2022": 4,
+    "Fall 1 2022": 5,
+    "Fall 2 2022": 6,    
+  }
+  // get all endorsement terms, store in "allEndorsementTerms"
+  // note: flat() at the bottom is used to convert an array of arrays
+  // into one big array of strings
+  const allEndorsementTerms = endorsements.map(endorsement => {
+    let termsArray = []
+    endorsement.courses.forEach(course => {
+      termsArray.push(generateCourseTermName(course))
+    })
+    return termsArray
+  }).flat()
+  const filteredEndorsementTerms = [...new Set(allEndorsementTerms)]
+  // declare "const columns" by mapping over filteredEndorsementTerms...
+  const columns = filteredEndorsementTerms.map(termName => {
+    // TODO: use "termIndexes" to map each term name to its index?
     return {
-      title: 'Course ' + col,
-      dataIndex: col,
-      key: col
+      title: termName,
+      dataIndex: termName,
+      key: termName
     }
   })
   columns.unshift({
     title: 'Endorsement Name',
     dataIndex: 'name',
-    key: 'name'
-  },{
-    title: 'Recommended',
-    dataIndex: 'recommended',
-    key: 'recommended'
+    key: 'name',
+    width: '190px'
   })
   return columns
 }
@@ -98,24 +54,38 @@ const generateEndorsementTableRows = (endorsements) => {
           key: endorsement.unique_id,
           recommended: recommended,
         }
+        let recommendedText = '';
+      if(endorsement.rec_pos === 3){
+        recommendedText = '\n(#1 Recommendation)'
+      } 
+      if(endorsement.rec_pos === 2){
+        recommendedText = '\n(#2 Recommendation)'
+      } 
+      if(endorsement.rec_pos === 1){
+        recommendedText = '\n(#3 Recommendation)'
+      }
+      row["name"] = endorsement.name + recommendedText
       // dynamically adds the course term as a key-value pair for this row
       endorsement.courses.forEach(course => {
-          row[course.index] = course.name
+          row[generateCourseTermName(course)] = course.name
       })
       return row;
   })
 }
 
 const EndorsementsTable = (props) => {
-  // props && console.log('ndorsmentprops.endorsements',props.endorsements)
   const tableColumns = generateEndorsementColumns(props.endorsements)
   const tableRows = generateEndorsementTableRows(props.endorsements);
+  // console.log('Endorsements tableColumns',tableColumns)
+  // console.log('Endorsements tableRows',tableRows)
+
   return (
     <div>
       <Table 
       dataSource={tableRows} 
       columns={tableColumns} 
-      scroll={{ x: 700 }}
+      scroll={{ x: 900 }}
+      rowClassName={(record, index) => ("recommended_"+record.recommended)}
       rowSelection={{
         type: "radio",
         onChange: (record) => {

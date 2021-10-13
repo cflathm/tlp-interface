@@ -15,7 +15,7 @@
                 "category": "Endorsement",
                 "description": null,
                 "rec_value": "0.7829918274466572",
-                "rec_pos": 1,
+                "rec_pos": 0,
                 "unique_id": "2_X",
                 "courses": [
                     {
@@ -42,13 +42,39 @@
                 ]
             },
             {
+                "option_id": 1,
+                "justification": "Not Interested in Master's Degree; Has Bachelor's Degree; ",
+                "name": "Master's Degree in Education",
+                "category": "Master's Degree",
+                "description": null,
+                "rec_value": "0.7737809374999999",
+                "rec_pos": 0,
+                "unique_id": "1_X",
+                "courses": [
+                    {
+                        "id": 13,
+                        "unique_id": "1_13",
+                        "name": "ED 8650 Curriculum Theory",
+                        "term": "Summer 2",
+                        "year": "2022"
+                    },
+                    {
+                        "id": 14,
+                        "unique_id": "1_14",
+                        "name": "EDF 8080 Contemporary Issues in Assessment",
+                        "term": "Summer 2",
+                        "year": "2022"
+                    }
+                ]
+            },
+            {
                 "option_id": 9,
                 "justification": "",
                 "name": "Steam Leadership",
                 "category": "Microcredential",
                 "description": "STEAM Leadership Microcredentials: Overview of Interdisciplinary/Transdisciplinary Teacher; Assessment and Evaulation in STEAM Classrooms; Strategies to Engage Learners in STEAM Classrooms",
                 "rec_value": "0.76492677821215",
-                "rec_pos": 2,
+                "rec_pos": 0,
                 "unique_id": "9_X",
                 "courses": [
                     {
@@ -76,46 +102,83 @@
                         "credential_name": "Steam Leadership"
                     }
                 ]
-            },
-            {
-                "option_id": 5,
-                "justification": "",
-                "name": "Science Engineering",
-                "category": "Microcredential",
-                "description": "Integrating Science & Engineering Practices Microcredentials: Understanding & Integrating Science & Engineering Practices; Integrating Project-Based Learning with Science & Engineering Practices; Assessment of Science & Engineering Practices",
-                "rec_value": "0.7380116138746313",
-                "rec_pos": 3,
-                "unique_id": "5_X",
-                "courses": [
-                    {
-                        "id": 47,
-                        "unique_id": "5_47",
-                        "name": "ED 8380 Understanding and Integrating Science and Engineering Practices",
-                        "term": "Spring 1",
-                        "year": "2022",
-                        "credential_name": "Science Engineering"
-                    },
-                    {
-                        "id": 48,
-                        "unique_id": "5_48",
-                        "name": "ED 8380 Integrating Project-Based Learning with Science and Engineering Practices",
-                        "term": "Spring 2",
-                        "year": "2022",
-                        "credential_name": "Science Engineering"
-                    },
-                    {
-                        "id": 49,
-                        "unique_id": "5_49",
-                        "name": "ED 8380 Assessment of Science and Engineering Practices",
-                        "term": "Summer 1",
-                        "year": "2022",
-                        "credential_name": "Science Engineering"
-                    }
-                ]
             }
         ],
         "options": {
             "Master's Degree": [
+                {
+                    "option_id": 1,
+                    "justification": "Not Interested in Master's Degree; Has Bachelor's Degree; ",
+                    "name": "Master's Degree in Education",
+                    "category": "Master's Degree",
+                    "description": null,
+                    "rec_value": "0.7737809374999999",
+                    "rec_pos": 0,
+                    "unique_id": "1_X",
+                    "courses": [
+                        {
+                            "id": 13,
+                            "unique_id": "1_13",
+                            "name": "ED 8650 Curriculum Theory",
+                            "term": "Summer 2",
+                            "year": "2022"
+                        },
+                        {
+                            "id": 14,
+                            "unique_id": "1_14",
+                            "name": "EDF 8080 Contemporary Issues in Assessment",
+                            "term": "Summer 2",
+                            "year": "2022"
+                        }
+                    ]
+                },
+                {
+                    "option_id": 12,
+                    "justification": "Not Interested in Master's Degree; Has Bachelor's Degree; Not Interested in Board Certification; ",
+                    "name": "Master's Degree in Education: STEAM Specialization",
+                    "category": "Master's Degree",
+                    "description": "Specific Masters degree provides eligibility for board certification.",
+                    "rec_value": "0.0769449752767132",
+                    "rec_pos": 0,
+                    "unique_id": "12_X",
+                    "courses": [
+                        {
+                            "id": 13,
+                            "unique_id": "12_13",
+                            "name": "ED 8650 Curriculum Theory",
+                            "term": "Summer 2",
+                            "year": "2022"
+                        },
+                        {
+                            "id": 14,
+                            "unique_id": "12_14",
+                            "name": "EDF 8080 Contemporary Issues in Assessment",
+                            "term": "Summer 2",
+                            "year": "2022"
+                        },
+                        {
+                            "id": 1,
+                            "unique_id": "12_1",
+                            "name": "ED 8700 STEAM Instructional Design",
+                            "term": "Spring 1",
+                            "year": "2022"
+                        },
+                        {
+                            "id": 2,
+                            "unique_id": "12_2",
+                            "name": "ED 8710/8711 STEAM Transdisciplinary Teaching",
+                            "term": "Summer 1",
+                            "year": "2022"
+                        },
+                        {
+                            "id": 3,
+                            "unique_id": "12_3",
+                            "name": "ED 8730 STEAM Assessment",
+                            "term": "Fall 1",
+                            "year": "2022"
+                        }
+                    ]
+                },
                 {
                     "option_id": 13,
                     "justification": "",
@@ -172,6 +235,20 @@
                             "name": "EDF 8080 Contemporary Issues in Assessment",
                             "term": "Summer 2",
                             "year": "2022"
+                        },
+                        {
+                            "id": 9,
+                            "unique_id": "14_9",
+                            "name": "EDF 8200 Effective Online Teaching",
+                            "term": "Spring 1",
+                            "year": "2022"
+                        },
+                        {
+                            "id": 12,
+                            "unique_id": "14_12",
+                            "name": "EDF 8230 Instructional Design and Assessment",
+                            "term": "Spring 2",
+                            "year": "2022"
                         }
                     ]
                 },
@@ -200,72 +277,6 @@
                             "year": "2022"
                         }
                     ]
-                },
-                {
-                    "option_id": 1,
-                    "justification": "Not Interested in Master's Degree; ",
-                    "name": "Master's Degree in Education",
-                    "category": "Master's Degree",
-                    "description": null,
-                    "rec_value": "0.0059205292203339975",
-                    "rec_pos": 0,
-                    "unique_id": "1_X",
-                    "courses": [
-                        {
-                            "id": 13,
-                            "unique_id": "1_13",
-                            "name": "ED 8650 Curriculum Theory",
-                            "term": "Summer 2",
-                            "year": "2022"
-                        },
-                        {
-                            "id": 14,
-                            "unique_id": "1_14",
-                            "name": "EDF 8080 Contemporary Issues in Assessment",
-                            "term": "Summer 2",
-                            "year": "2022"
-                        }
-                    ]
-                },
-                {
-                    "option_id": 12,
-                    "justification": "Not Interested in Master's Degree; ",
-                    "name": "Master's Degree in Education: STEAM Specialization",
-                    "category": "Master's Degree",
-                    "description": "Specific Masters degree provides eligibility for board certification.",
-                    "rec_value": "0.0059205292203339975",
-                    "rec_pos": 0,
-                    "unique_id": "12_X",
-                    "courses": [
-                        {
-                            "id": 13,
-                            "unique_id": "12_13",
-                            "name": "ED 8650 Curriculum Theory",
-                            "term": "Summer 2",
-                            "year": "2022"
-                        },
-                        {
-                            "id": 14,
-                            "unique_id": "12_14",
-                            "name": "EDF 8080 Contemporary Issues in Assessment",
-                            "term": "Summer 2",
-                            "year": "2022"
-                        },
-                        {
-                            "id": 2,
-                            "unique_id": "12_2",
-                            "name": "ED 8710/8711 STEAM Transdisciplinary Teaching",
-                            "term": "Summer 1",
-                            "year": "2022"
-                        },
-                        {
-                            "id": 3,
-                            "unique_id": "12_3",
-                            "name": "ED 8730 STEAM Assessment",
-                            "term": "Fall 1",
-                            "year": "2022"
-                        }
-                    ]
                 }
             ],
             "Endorsement": [
@@ -276,7 +287,7 @@
                     "category": "Endorsement",
                     "description": null,
                     "rec_value": "0.7829918274466572",
-                    "rec_pos": 1,
+                    "rec_pos": 0,
                     "unique_id": "2_X",
                     "courses": [
                         {
@@ -356,7 +367,7 @@
                     "category": "Microcredential",
                     "description": "STEAM Leadership Microcredentials: Overview of Interdisciplinary/Transdisciplinary Teacher; Assessment and Evaulation in STEAM Classrooms; Strategies to Engage Learners in STEAM Classrooms",
                     "rec_value": "0.76492677821215",
-                    "rec_pos": 2,
+                    "rec_pos": 0,
                     "unique_id": "9_X",
                     "courses": [
                         {
@@ -392,7 +403,7 @@
                     "category": "Microcredential",
                     "description": "Integrating Science & Engineering Practices Microcredentials: Understanding & Integrating Science & Engineering Practices; Integrating Project-Based Learning with Science & Engineering Practices; Assessment of Science & Engineering Practices",
                     "rec_value": "0.7380116138746313",
-                    "rec_pos": 3,
+                    "rec_pos": 0,
                     "unique_id": "5_X",
                     "courses": [
                         {

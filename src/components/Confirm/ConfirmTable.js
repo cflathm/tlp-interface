@@ -28,14 +28,14 @@ import { Table } from 'antd';
   const generateConfirmTableRows = (userSelections) => {
     // this map returns a json object of all rows, formatted to match key-value pairs in "dataSource"
     // for each pathway in pathways, return json object
-    console.log(userSelections)
+    // console.log(userSelections)
     const selectedPathway = userSelections.map(selection => {
       // console.log('selection', selection)
       let pathway = [];
       if(selection.courses){
         selection.courses.forEach(course => {
           let terms = ''
-          if(generateCourseTermName(course)!='undefined undefined'){
+          if(generateCourseTermName(course)!=='undefined undefined'){
             terms = generateCourseTermName(course)
           } else {
             terms = 'TBD'
@@ -53,7 +53,7 @@ import { Table } from 'antd';
     } else {
       // if this selection has no "courses" field (IE a micro-credential)
       let terms = ''
-        if(generateCourseTermName(selection)!='undefined undefined'){
+        if(generateCourseTermName(selection)!=='undefined undefined'){
           terms = generateCourseTermName(selection)
         } else {
           terms = 'TBD'
@@ -80,7 +80,7 @@ const ConfirmTable = (props) => {
   return (
     <div className="last-table">
       <Table 
-      scroll={{ x: 700 }}
+      scroll={{ x: 900 }}
       dataSource={dataSource} 
       columns={columns} 
       // rowSelection={{type: "radio"}}

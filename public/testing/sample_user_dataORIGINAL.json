@@ -10,33 +10,58 @@
         "recommendations": [
             {
                 "option_id": 2,
-                "justification": "You noted this as your prefered endorsement.; ",
+                "justification": "You noted this as your prefered endorsement",
                 "name": "STEAM Endorsement",
                 "category": "Endorsement",
                 "description": null,
                 "rec_value": "0.7829918274466572",
-                "rec_pos": 1,
+                "rec_pos": 3,
                 "unique_id": "2_X",
                 "courses": [
                     {
                         "id": 1,
                         "unique_id": "2_1",
-                        "name": "ED 8700 STEAM Instructional Design",
-                        "term": "Spring 1",
-                        "year": "2022"
+                        "name": "ED 8700 STEAM Instructional Design"
                     },
                     {
                         "id": 2,
                         "unique_id": "2_2",
-                        "name": "ED 8710/8711 STEAM Transdisciplinary Teaching",
-                        "term": "Summer 1",
-                        "year": "2022"
+                        "name": "ED 8710/8711 STEAM Transdisciplinary Teaching"
                     },
                     {
                         "id": 3,
                         "unique_id": "2_3",
-                        "name": "ED 8730 STEAM Assessment",
-                        "term": "Fall 1",
+                        "name": "ED 8730 STEAM Assessment"
+                    },
+                    {
+                        "id": 4,
+                        "unique_id": "2_4",
+                        "name": "ED 8720/ED 8721 STEAM Enacted and Evaluated"
+                    }
+                ]
+            },
+            {
+                "option_id": 1,
+                "justification": "Not Interested in Master's Degree; Has Bachelor's Degree; ",
+                "name": "Master's Degree in Education",
+                "category": "Master's Degree",
+                "description": null,
+                "rec_value": "0.7737809374999999",
+                "rec_pos": 2,
+                "unique_id": "1_X",
+                "courses": [
+                    {
+                        "id": 13,
+                        "unique_id": "1_13",
+                        "name": "ED 8650 Curriculum Theory",
+                        "term": "Summer 2",
+                        "year": "2022"
+                    },
+                    {
+                        "id": 14,
+                        "unique_id": "1_14",
+                        "name": "EDF 8080 Contemporary Issues in Assessment",
+                        "term": "Summer 2",
                         "year": "2022"
                     }
                 ]
@@ -48,13 +73,13 @@
                 "category": "Microcredential",
                 "description": "STEAM Leadership Microcredentials: Overview of Interdisciplinary/Transdisciplinary Teacher; Assessment and Evaulation in STEAM Classrooms; Strategies to Engage Learners in STEAM Classrooms",
                 "rec_value": "0.76492677821215",
-                "rec_pos": 2,
+                "rec_pos": 0,
                 "unique_id": "9_X",
                 "courses": [
                     {
                         "id": 38,
                         "unique_id": "9_38",
-                        "name": "EDHD 8310 Fostering Transdisciplinary Teaching",
+                        "name": "Fostering Transdisciplinary Teaching",
                         "term": "Spring 1",
                         "year": "2022",
                         "credential_name": "Steam Leadership"
@@ -62,7 +87,7 @@
                     {
                         "id": 39,
                         "unique_id": "9_39",
-                        "name": "EDHD 8310 Developing a STEAM Community",
+                        "name": "Developing a STEAM Community",
                         "term": "Spring 2",
                         "year": "2022",
                         "credential_name": "Steam Leadership"
@@ -70,52 +95,68 @@
                     {
                         "id": 40,
                         "unique_id": "9_40",
-                        "name": "EDHD 8310 Supporting Assessment in STEAM Classrooms",
+                        "name": "Supporting Assessment in STEAM Classrooms",
                         "term": "Summer 1",
                         "year": "2022",
                         "credential_name": "Steam Leadership"
-                    }
-                ]
-            },
-            {
-                "option_id": 5,
-                "justification": "",
-                "name": "Science Engineering",
-                "category": "Microcredential",
-                "description": "Integrating Science & Engineering Practices Microcredentials: Understanding & Integrating Science & Engineering Practices; Integrating Project-Based Learning with Science & Engineering Practices; Assessment of Science & Engineering Practices",
-                "rec_value": "0.7380116138746313",
-                "rec_pos": 3,
-                "unique_id": "5_X",
-                "courses": [
-                    {
-                        "id": 47,
-                        "unique_id": "5_47",
-                        "name": "ED 8380 Understanding and Integrating Science and Engineering Practices",
-                        "term": "Spring 1",
-                        "year": "2022",
-                        "credential_name": "Science Engineering"
-                    },
-                    {
-                        "id": 48,
-                        "unique_id": "5_48",
-                        "name": "ED 8380 Integrating Project-Based Learning with Science and Engineering Practices",
-                        "term": "Spring 2",
-                        "year": "2022",
-                        "credential_name": "Science Engineering"
-                    },
-                    {
-                        "id": 49,
-                        "unique_id": "5_49",
-                        "name": "ED 8380 Assessment of Science and Engineering Practices",
-                        "term": "Summer 1",
-                        "year": "2022",
-                        "credential_name": "Science Engineering"
                     }
                 ]
             }
         ],
         "options": {
             "Master's Degree": [
+                {
+                    "option_id": 1,
+                    "justification": "Not Interested in Master's Degree; Has Bachelor's Degree; ",
+                    "name": "Master's Degree in Education",
+                    "category": "Master's Degree",
+                    "description": null,
+                    "rec_value": "0.7737809374999999",
+                    "rec_pos": 2,
+                    "unique_id": "1_X",
+                    "courses": [
+                        {
+                            "id": 13,
+                            "unique_id": "1_13",
+                            "name": "ED 8650 Curriculum Theory",
+                            "term": "Summer 2",
+                            "year": "2022"
+                        },
+                        {
+                            "id": 14,
+                            "unique_id": "1_14",
+                            "name": "EDF 8080 Contemporary Issues in Assessment",
+                            "term": "Summer 2",
+                            "year": "2022"
+                        }
+                    ]
+                },
+                {
+                    "option_id": 12,
+                    "justification": "Not Interested in Master's Degree; Has Bachelor's Degree; Not Interested in Board Certification; ",
+                    "name": "Master's Degree in Education: STEAM Specialization",
+                    "category": "Master's Degree",
+                    "description": "Specific Masters degree provides eligibility for board certification.",
+                    "rec_value": "0.0769449752767132",
+                    "rec_pos": 0,
+                    "unique_id": "12_X",
+                    "courses": [
+                        {
+                            "id": 13,
+                            "unique_id": "12_13",
+                            "name": "ED 8650 Curriculum Theory",
+                            "term": "Summer 2",
+                            "year": "2022"
+                        },
+                        {
+                            "id": 14,
+                            "unique_id": "12_14",
+                            "name": "EDF 8080 Contemporary Issues in Assessment",
+                            "term": "Summer 2",
+                            "year": "2022"
+                        }
+                    ]
+                },
                 {
                     "option_id": 13,
                     "justification": "",
@@ -139,13 +180,6 @@
                             "name": "EDF 8080 Contemporary Issues in Assessment",
                             "term": "Summer 2",
                             "year": "2022"
-                        },
-                        {
-                            "id": 5,
-                            "unique_id": "13_5",
-                            "name": "ED 8750 Elements of Instructional Effectiveness",
-                            "term": "Fall 1",
-                            "year": "2022"
                         }
                     ]
                 },
@@ -159,6 +193,20 @@
                     "rec_pos": 0,
                     "unique_id": "14_X",
                     "courses": [
+                        {
+                            "id": 11,
+                            "unique_id": "14_11",
+                            "name": "EDF 8220 Web Tools to Enhance Online Engagement",
+                            "term": "Spring 1",
+                            "year": "2022"
+                        },
+                        {
+                            "id": 12,
+                            "unique_id": "14_12",
+                            "name": "EDF 8230 Instructional Design and Assessment",
+                            "term": "Spring 2",
+                            "year": "2022"
+                        },
                         {
                             "id": 13,
                             "unique_id": "14_13",
@@ -200,72 +248,6 @@
                             "year": "2022"
                         }
                     ]
-                },
-                {
-                    "option_id": 1,
-                    "justification": "Not Interested in Master's Degree; ",
-                    "name": "Master's Degree in Education",
-                    "category": "Master's Degree",
-                    "description": null,
-                    "rec_value": "0.0059205292203339975",
-                    "rec_pos": 0,
-                    "unique_id": "1_X",
-                    "courses": [
-                        {
-                            "id": 13,
-                            "unique_id": "1_13",
-                            "name": "ED 8650 Curriculum Theory",
-                            "term": "Summer 2",
-                            "year": "2022"
-                        },
-                        {
-                            "id": 14,
-                            "unique_id": "1_14",
-                            "name": "EDF 8080 Contemporary Issues in Assessment",
-                            "term": "Summer 2",
-                            "year": "2022"
-                        }
-                    ]
-                },
-                {
-                    "option_id": 12,
-                    "justification": "Not Interested in Master's Degree; ",
-                    "name": "Master's Degree in Education: STEAM Specialization",
-                    "category": "Master's Degree",
-                    "description": "Specific Masters degree provides eligibility for board certification.",
-                    "rec_value": "0.0059205292203339975",
-                    "rec_pos": 0,
-                    "unique_id": "12_X",
-                    "courses": [
-                        {
-                            "id": 13,
-                            "unique_id": "12_13",
-                            "name": "ED 8650 Curriculum Theory",
-                            "term": "Summer 2",
-                            "year": "2022"
-                        },
-                        {
-                            "id": 14,
-                            "unique_id": "12_14",
-                            "name": "EDF 8080 Contemporary Issues in Assessment",
-                            "term": "Summer 2",
-                            "year": "2022"
-                        },
-                        {
-                            "id": 2,
-                            "unique_id": "12_2",
-                            "name": "ED 8710/8711 STEAM Transdisciplinary Teaching",
-                            "term": "Summer 1",
-                            "year": "2022"
-                        },
-                        {
-                            "id": 3,
-                            "unique_id": "12_3",
-                            "name": "ED 8730 STEAM Assessment",
-                            "term": "Fall 1",
-                            "year": "2022"
-                        }
-                    ]
                 }
             ],
             "Endorsement": [
@@ -276,29 +258,32 @@
                     "category": "Endorsement",
                     "description": null,
                     "rec_value": "0.7829918274466572",
-                    "rec_pos": 1,
+                    "rec_pos": 3,
                     "unique_id": "2_X",
                     "courses": [
                         {
                             "id": 1,
+                            "index": 1,
                             "unique_id": "2_1",
-                            "name": "ED 8700 STEAM Instructional Design",
-                            "term": "Spring 1",
-                            "year": "2022"
+                            "name": "ED 8700 STEAM Instructional Design"
                         },
                         {
                             "id": 2,
+                            "index": 2,
                             "unique_id": "2_2",
-                            "name": "ED 8710/8711 STEAM Transdisciplinary Teaching",
-                            "term": "Summer 1",
-                            "year": "2022"
+                            "name": "ED 8710/8711 STEAM Transdisciplinary Teaching"
                         },
                         {
                             "id": 3,
+                            "index": 3,
                             "unique_id": "2_3",
-                            "name": "ED 8730 STEAM Assessment",
-                            "term": "Fall 1",
-                            "year": "2022"
+                            "name": "ED 8730 STEAM Assessment"
+                        },
+                        {
+                            "id": 4,
+                            "index": 4,
+                            "unique_id": "2_4",
+                            "name": "ED 8720/ED 8721 STEAM Enacted and Evaluated"
                         }
                     ]
                 },
@@ -315,9 +300,26 @@
                         {
                             "id": 5,
                             "unique_id": "3_5",
-                            "name": "ED 8750 Elements of Instructional Effectiveness",
-                            "term": "Fall 1",
-                            "year": "2022"
+                            "index": 1,
+                            "name": "ED 8750 Elements of Instructional Effectiveness"
+                        },
+                        {
+                            "id": 6,
+                            "unique_id": "3_6",
+                            "index": 2,
+                            "name": "ED 8760 Curriculum, Instruction, Assessment, & Learning from a Mentor Perspective"
+                        },
+                        {
+                            "id": 7,
+                            "unique_id": "3_7",
+                            "index": 3,
+                            "name": "EDLT 8280 Critical Issues in Instructional Coaching & School Leadership"
+                        },
+                        {
+                            "id": 8,
+                            "unique_id": "3_8",
+                            "index": 4,
+                            "name": "EDLT 8290 Reflective Instructional Coaching Practice"
                         }
                     ]
                 },
@@ -332,15 +334,17 @@
                     "unique_id": "4_X",
                     "courses": [
                         {
-                            "id": 9,
-                            "unique_id": "4_9",
-                            "name": "EDF 8200 Effective Online Teaching",
+                            "id": 11,
+                            "unique_id": "3_11",
+                            "index": 1,
+                            "name": "EDF 8220 Web Tools to Enhance Online Engagement",
                             "term": "Spring 1",
                             "year": "2022"
                         },
                         {
                             "id": 12,
-                            "unique_id": "4_12",
+                            "unique_id": "3_12",
+                            "index": 2,
                             "name": "EDF 8230 Instructional Design and Assessment",
                             "term": "Spring 2",
                             "year": "2022"
@@ -356,13 +360,13 @@
                     "category": "Microcredential",
                     "description": "STEAM Leadership Microcredentials: Overview of Interdisciplinary/Transdisciplinary Teacher; Assessment and Evaulation in STEAM Classrooms; Strategies to Engage Learners in STEAM Classrooms",
                     "rec_value": "0.76492677821215",
-                    "rec_pos": 2,
+                    "rec_pos": 0,
                     "unique_id": "9_X",
                     "courses": [
                         {
                             "id": 38,
                             "unique_id": "9_38",
-                            "name": "EDHD 8310 Fostering Transdisciplinary Teaching",
+                            "name": "Fostering Transdisciplinary Teaching",
                             "term": "Spring 1",
                             "year": "2022",
                             "credential_name": "Steam Leadership"
@@ -370,7 +374,7 @@
                         {
                             "id": 39,
                             "unique_id": "9_39",
-                            "name": "EDHD 8310 Developing a STEAM Community",
+                            "name": "Developing a STEAM Community",
                             "term": "Spring 2",
                             "year": "2022",
                             "credential_name": "Steam Leadership"
@@ -378,7 +382,7 @@
                         {
                             "id": 40,
                             "unique_id": "9_40",
-                            "name": "EDHD 8310 Supporting Assessment in STEAM Classrooms",
+                            "name": "Supporting Assessment in STEAM Classrooms",
                             "term": "Summer 1",
                             "year": "2022",
                             "credential_name": "Steam Leadership"
@@ -392,13 +396,13 @@
                     "category": "Microcredential",
                     "description": "Integrating Science & Engineering Practices Microcredentials: Understanding & Integrating Science & Engineering Practices; Integrating Project-Based Learning with Science & Engineering Practices; Assessment of Science & Engineering Practices",
                     "rec_value": "0.7380116138746313",
-                    "rec_pos": 3,
+                    "rec_pos": 0,
                     "unique_id": "5_X",
                     "courses": [
                         {
                             "id": 47,
                             "unique_id": "5_47",
-                            "name": "ED 8380 Understanding and Integrating Science and Engineering Practices",
+                            "name": "Understanding and Integrating Science and Engineering Practices",
                             "term": "Spring 1",
                             "year": "2022",
                             "credential_name": "Science Engineering"
@@ -406,7 +410,7 @@
                         {
                             "id": 48,
                             "unique_id": "5_48",
-                            "name": "ED 8380 Integrating Project-Based Learning with Science and Engineering Practices",
+                            "name": "Integrating Project-Based Learning with Science and Engineering Practices",
                             "term": "Spring 2",
                             "year": "2022",
                             "credential_name": "Science Engineering"
@@ -414,7 +418,7 @@
                         {
                             "id": 49,
                             "unique_id": "5_49",
-                            "name": "ED 8380 Assessment of Science and Engineering Practices",
+                            "name": "Assessment of Science and Engineering Practices",
                             "term": "Summer 1",
                             "year": "2022",
                             "credential_name": "Science Engineering"
@@ -434,7 +438,7 @@
                         {
                             "id": 44,
                             "unique_id": "8_44",
-                            "name": "EDHD 8310 Introduction to Online Teaching",
+                            "name": "Introduction to Online Teaching",
                             "term": "Spring 1",
                             "year": "2022",
                             "credential_name": "Online Teaching"
@@ -442,7 +446,7 @@
                         {
                             "id": 45,
                             "unique_id": "8_45",
-                            "name": "EDHD 8310 Differentiated Online Teaching Practices",
+                            "name": "Differentiated Online Teaching Practices",
                             "term": "Spring 2",
                             "year": "2022",
                             "credential_name": "Online Teaching"
@@ -450,7 +454,7 @@
                         {
                             "id": 46,
                             "unique_id": "8_46",
-                            "name": "EDHD 8310 Engaging Students in Online Learning Spaces",
+                            "name": "Engaging Students in Online Learning Spaces",
                             "term": "Summer 1",
                             "year": "2022",
                             "credential_name": "Online Teaching"
@@ -464,13 +468,13 @@
                     "category": "Microcredential",
                     "description": "Socio Emotional Learning Microcredentials: Understanding SEL & the Impact of Adverse Childhood Experiences (ACES); Classroom Strategies to Promote SEL; Addressing SEL through the Lens of Equity, Diversity, & Inclusion",
                     "rec_value": "0.6892248432595415",
-                    "rec_pos": 0,
+                    "rec_pos": 1,
                     "unique_id": "10_X",
                     "courses": [
                         {
                             "id": 41,
-                            "unique_id": "10_41",
-                            "name": "EDHD 8310 Understanding SEL & the Impact of Adverse Childhood Experiences (ACES)",
+                            "unique_id": "10_41",                          
+                            "name": "Understanding SEL & the Impact of Adverse Childhood Experiences (ACES)",
                             "term": "Spring 1",
                             "year": "2022",
                             "credential_name": "Socio Emotional"
@@ -478,7 +482,7 @@
                         {
                             "id": 42,
                             "unique_id": "10_42",
-                            "name": "EDHD 8310 Classroom Strategies to Promote SEL",
+                            "name": "Classroom Strategies to Promote SEL",
                             "term": "Spring 2",
                             "year": "2022",
                             "credential_name": "Socio Emotional"
@@ -486,7 +490,7 @@
                         {
                             "id": 43,
                             "unique_id": "10_43",
-                            "name": "EDHD 8310 Addressing SEL through the Lens of Equity, Diversity, & Inclusion",
+                            "name": "Addressing SEL through the Lens of Equity, Diversity, & Inclusion",
                             "term": "Summer 1",
                             "year": "2022",
                             "credential_name": "Socio Emotional"
@@ -506,25 +510,19 @@
                         {
                             "id": 35,
                             "unique_id": "11_35",
-                            "name": "ED 8380 STEM Foundations",
-                            "term": "Spring 1",
-                            "year": "2022",
+                            "name": "STEM Foundations",
                             "credential_name": "Steam Teaching"
                         },
                         {
                             "id": 36,
                             "unique_id": "11_36",
-                            "name": "ED 8380 STEM Instructional Design",
-                            "term": "Spring 1",
-                            "year": "2022",
+                            "name": "STEM Instructional Design",
                             "credential_name": "Steam Teaching"
                         },
                         {
                             "id": 37,
                             "unique_id": "11_37",
-                            "name": "ED 8380 STEM Assessment",
-                            "term": "Spring 1",
-                            "year": "2022",
+                            "name": "STEM Assessment",
                             "credential_name": "Steam Teaching"
                         }
                     ]
@@ -536,13 +534,13 @@
                     "category": "Microcredential",
                     "description": "Computer Science Fundamentals Microcredentials: Introduction to Coding with Block-Based Programming; Advanced Coding with Text-Based Programming; Integrating Computational Thinking into Math & Science",
                     "rec_value": "0.6100538040821382",
-                    "rec_pos": 0,
+                    "rec_pos": 1,
                     "unique_id": "7_X",
                     "courses": [
                         {
                             "id": 56,
                             "unique_id": "7_56",
-                            "name": "ED 8380 Engaging Students in Data Analysis, Statistics, and Probability",
+                            "name": "Engaging Students in Data Analysis, Statistics, and Probability",
                             "term": "Spring 2",
                             "year": "2022",
                             "credential_name": "Computer Science"
@@ -550,7 +548,7 @@
                         {
                             "id": 54,
                             "unique_id": "7_54",
-                            "name": "EDHD 8310 Advanced Coding with Text-Based Programming",
+                            "name": "Advanced Coding with Text-Based Programming",
                             "term": "Spring 2",
                             "year": "2022",
                             "credential_name": "Computer Science"
@@ -558,7 +556,7 @@
                         {
                             "id": 55,
                             "unique_id": "7_55",
-                            "name": "EDHD 8310 Integrating Computational Thinking into Math and Science",
+                            "name": "Integrating Computational Thinking into Math and Science",
                             "term": "Summer 1",
                             "year": "2022",
                             "credential_name": "Computer Science"
@@ -578,7 +576,7 @@
                         {
                             "id": 50,
                             "unique_id": "6_50",
-                            "name": "ED 8380 Engaging Students in Mathematics through Career Snapshots",
+                            "name": "Engaging Students in Mathematics through Career Snapshots",
                             "term": "Spring 1",
                             "year": "2022",
                             "credential_name": "Math"
@@ -586,7 +584,7 @@
                         {
                             "id": 53,
                             "unique_id": "6_53",
-                            "name": "EDHD 8310 Introduction to Coding with Block-Based Programming",
+                            "name": "Introduction to Coding with Block-Based Programming",
                             "term": "Spring 1",
                             "year": "2022",
                             "credential_name": "Math"
@@ -594,7 +592,7 @@
                         {
                             "id": 52,
                             "unique_id": "6_52",
-                            "name": "ED 8380 Using Formative Assessment Strategies to Engage Students in Mathematics",
+                            "name": "Using Formative Assessment Strategies to Engage Students in Mathematics",
                             "term": "Summer 1",
                             "year": "2022",
                             "credential_name": "Math"

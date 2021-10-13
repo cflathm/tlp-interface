@@ -24,13 +24,25 @@ const generateMastersTableRows = (pathways) => {
   // for each pathway in pathways, return json object
   // console.log('pathways',pathways)
   return pathways.map(pathway => {
-      const recommended = pathway.rec_pos
+      // const recommended = pathway.rec_pos
       const row = {
-          name: pathway.name,
           dataIndex: pathway.unique_id,
           key: pathway.unique_id,
-          recommended: recommended
+          recommended: pathway.rec_pos,
       }
+      let recommendedText = '';
+      if(pathway.rec_pos === 3){
+        recommendedText = '\n(#1 Recommendation)'
+      } 
+      if(pathway.rec_pos === 2){
+        recommendedText = '\n(#2 Recommendation)'
+      } 
+      if(pathway.rec_pos === 1){
+        recommendedText = '\n(#3 Recommendation)'
+      }
+      row["name"] = pathway.name + recommendedText
+
+
       // dynamically adds the course term as a key-value pair for this row
       pathway.courses.forEach(course => {
         // console.log('course',course)
@@ -67,18 +79,15 @@ const generateMastersTableColumns = (courseTermNames) => {
     return {
       title: columnTitle,
       dataIndex: columnTitle,
-      key: columnTitle
+      key: columnTitle,
     }
   })
   columns.unshift({
     title: 'Pathway Name',
     dataIndex: 'name',
-    key: 'name'
-  },{
-    title: 'Recommended',
-    dataIndex: 'recommended',
-    key: 'recommended'
-  })
+    key: 'name',
+    // width: '240px'
+  });
   return columns
 }
 
@@ -88,12 +97,16 @@ const MastersDegreeTable = (props) => {
   const tableColumns = generateMastersTableColumns(courseTermNames);
   const tableRows = generateMastersTableRows(props.mastersDegrees);
 
+  // console.log('masters tableColumns',tableColumns)
+  // console.log('masters tableRows',tableRows)
+
     return (
     <div>
       <Table 
-      scroll={{ x: 700 }}
+      scroll={{ x: 900 }}
       dataSource={tableRows} 
       columns={tableColumns}
+      rowClassName={(record, index) => ("recommended_"+record.recommended)}
       rowSelection={{
         type: "radio",
         onChange: (record) => {

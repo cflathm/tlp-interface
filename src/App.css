@@ -88,13 +88,43 @@ table tr td.ant-table-selection-column-microcredentials {
   text-align: left;
 }
 
-#root > div > div.fullpage-card > div:nth-child(5) > div > div > div > div > div > div > table > tbody > tr > td:nth-child(n+4){
+/* #root > div > div.fullpage-card > div:nth-child(5) > div > div > div > div > div > div > table > tbody > tr > td:nth-child(n+4){ */
+#root > div > div.fullpage-card > div:nth-child(5) > div > div > div > div > div > div > table > tbody > tr > td{
   white-space: pre-wrap;
 }
 
 .table-row-light {
   background-color: #ffffff;
+  white-space: pre-wrap;
 }
+
 .table-row-dark {
-  background-color: #fbfbfb;
+  background-color: #e0e0e0;
+  white-space: pre-wrap;
 }
+
+.recommended_1 {
+  white-space: pre-wrap;
+  background-color: rgb(242, 255, 244);
+  ;
+}
+.recommended_2 {
+  white-space: pre-wrap;
+  background-color: rgba(229, 253, 234, 0.904);
+}
+.recommended_3 {
+  white-space: pre-wrap;
+  background-color: rgb(223, 255, 229);
+}
+
+.recommended_1:hover{
+  background-color: #c4e6ca;
+  ;
+}
+.recommended_2:hover{
+  background-color: #c4e6ca;
+}
+.recommended_3:hover{
+  background-color: #c4e6ca;
+}
+
