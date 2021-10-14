@@ -11,13 +11,13 @@ import { Table, Checkbox } from 'antd';
     credentials.forEach(credential => {
       let recommendedText = '';
       if(credential.rec_pos === 3){
-        recommendedText = '\n(#1 Recommendation)'
+        recommendedText = '\n(#3 Recommendation)'
       }
       if(credential.rec_pos === 2){
         recommendedText = '\n(#2 Recommendation)'
       } 
       if(credential.rec_pos === 1){
-        recommendedText = '\n(#3 Recommendation)'
+        recommendedText = '\n(#1 Recommendation)'
       }
       credentialRecommendations[credential.name] = credential.name + recommendedText
       // row["name"] = pathway.name + recommendedText
@@ -131,25 +131,25 @@ import { Table, Checkbox } from 'antd';
       const newCheckboxState = [...checkboxState];
       newCheckboxState[rowIndex][columnKey] = event.target.checked;
       setCheckboxState(newCheckboxState);
-      if(columnKey == "spring22_1"){
+      if(columnKey === "spring22_1"){
         if(record.spring22_1 === true){
           props.setSelectedMicrocredential(selectedMicro => [...selectedMicro, record.spring22_1ID]);
         } else {
-          props.setSelectedMicrocredential(props.selectedMicrocredential.filter(thisElement => thisElement != record.spring22_1ID));
+          props.setSelectedMicrocredential(props.selectedMicrocredential.filter(thisElement => thisElement !== record.spring22_1ID));
         }
       }
-      if(columnKey == "spring22_2"){
+      if(columnKey === "spring22_2"){
         if(record.spring22_2 === true){
           props.setSelectedMicrocredential(selectedMicro => [...selectedMicro, record.spring22_2ID]);
         } else {
-          props.setSelectedMicrocredential(props.selectedMicrocredential.filter(thisElement => thisElement != record.spring22_2ID));
+          props.setSelectedMicrocredential(props.selectedMicrocredential.filter(thisElement => thisElement !== record.spring22_2ID));
         }  
       }
-      if(columnKey == "summer22_1"){
+      if(columnKey === "summer22_1"){
         if(record.summer22_1 === true){
           props.setSelectedMicrocredential(selectedMicro => [...selectedMicro, record.summer22_1ID]);
         } else {
-          props.setSelectedMicrocredential(props.selectedMicrocredential.filter(thisElement => thisElement != record.summer22_1ID));
+          props.setSelectedMicrocredential(props.selectedMicrocredential.filter(thisElement => thisElement !== record.summer22_1ID));
         }
       }
     };
@@ -162,7 +162,7 @@ import { Table, Checkbox } from 'antd';
         width: '180px'
       },
       {
-        title: 'Spring 1, 2022',
+        title: 'Spring 1 2022',
         dataIndex: 'spring22_1',
         key: 'spring22_1',
         render: (value, record, rowIndex) => (
@@ -175,7 +175,7 @@ import { Table, Checkbox } from 'antd';
         )
       },
       {
-        title: 'Spring 2, 2022',
+        title: 'Spring 2 2022',
         dataIndex: 'spring22_2',
         key: 'spring22_2',
         render: (value, record, rowIndex) => (
@@ -188,7 +188,7 @@ import { Table, Checkbox } from 'antd';
         )
       },
       {
-        title: 'Summer 1, 2022',
+        title: 'Summer 1 2022',
         dataIndex: 'summer22_1',
         key: 'summer22_1',
         render: (value, record, rowIndex) => (

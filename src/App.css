@@ -89,9 +89,12 @@ table tr td.ant-table-selection-column-microcredentials {
 }
 
 /* #root > div > div.fullpage-card > div:nth-child(5) > div > div > div > div > div > div > table > tbody > tr > td:nth-child(n+4){ */
-#root > div > div.fullpage-card > div:nth-child(5) > div > div > div > div > div > div > table > tbody > tr > td{
+/* #root > div > div.fullpage-card > div:nth-child(5) > div > div > div > div > div > div > table > tbody > tr > td{ */
+/* #root > div > div.fullpage-card > div:nth-child(5) > div > div{ */
+.ant-table-cell{
   white-space: pre-wrap;
 }
+
 
 .table-row-light {
   background-color: #ffffff;
@@ -103,18 +106,20 @@ table tr td.ant-table-selection-column-microcredentials {
   white-space: pre-wrap;
 }
 
-.recommended_1 {
+.recommended_3 {
   white-space: pre-wrap;
-  background-color: rgb(242, 255, 244);
-  ;
+  background-color: rgba(223, 255, 229, 0.221);
+  font-weight:600;
 }
 .recommended_2 {
   white-space: pre-wrap;
-  background-color: rgba(229, 253, 234, 0.904);
+  background-color: rgba(223, 255, 229, 0.687);
+  font-weight:600;
 }
-.recommended_3 {
+.recommended_1 {
   white-space: pre-wrap;
   background-color: rgb(223, 255, 229);
+  font-weight:600;
 }
 
 .recommended_1:hover{
@@ -126,5 +131,10 @@ table tr td.ant-table-selection-column-microcredentials {
 }
 .recommended_3:hover{
   background-color: #c4e6ca;
+}
+
+/* hide check all box at top of tables */
+.ant-table-thead tr .ant-table-selection-column div { 
+  display: none; 
 }
 

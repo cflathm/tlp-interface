@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Table } from 'antd';
 
 /* TODO
@@ -32,13 +32,13 @@ const generateMastersTableRows = (pathways) => {
       }
       let recommendedText = '';
       if(pathway.rec_pos === 3){
-        recommendedText = '\n(#1 Recommendation)'
+        recommendedText = '\n(#3 Recommendation)'
       } 
       if(pathway.rec_pos === 2){
         recommendedText = '\n(#2 Recommendation)'
       } 
       if(pathway.rec_pos === 1){
-        recommendedText = '\n(#3 Recommendation)'
+        recommendedText = '\n(#1 Recommendation)'
       }
       row["name"] = pathway.name + recommendedText
 
@@ -71,7 +71,7 @@ const generateMastersTableRows = (pathways) => {
 const generateMastersTableColumns = (courseTermNames) => {
   const columns = courseTermNames.map(col => {
     let columnTitle = '';
-    if(col == 'undefined undefined'){
+    if(col === 'undefined undefined'){
       columnTitle = 'No date'
     } else {
       columnTitle = col;
@@ -92,13 +92,23 @@ const generateMastersTableColumns = (courseTermNames) => {
 }
 
 
+
 const MastersDegreeTable = (props) => {
   const courseTermNames = getCourseTermNames(props.mastersDegrees);
   const tableColumns = generateMastersTableColumns(courseTermNames);
   const tableRows = generateMastersTableRows(props.mastersDegrees);
 
+  // useEffect((evt) => {
+  //   if(props.selectedMastersDegree === undefined || props.selectedMastersDegree.length === 0){
+  //     console.log('GOOD')
+  //   } else {
+  //     console.log('throw error/alert')
+  //   }
+  // },[props.selectedMastersDegree])
   // console.log('masters tableColumns',tableColumns)
   // console.log('masters tableRows',tableRows)
+  // console.log('props.selectedMastersDegree',props.selectedMastersDegree)
+  const selection = props.selectedMastersDegree;
 
     return (
     <div>
@@ -108,9 +118,13 @@ const MastersDegreeTable = (props) => {
       columns={tableColumns}
       rowClassName={(record, index) => ("recommended_"+record.recommended)}
       rowSelection={{
+        // selectedRowKeys: selection,
         type: "radio",
         onChange: (record) => {
-          props.setSelection(record[0]);
+          // props.setSelectedMastersDegree('');
+          props.setSelectedMastersDegree(record[0]);
+          // console.log('props.selectedMastersDegree',props.selectedMastersDegree)
+          // console.log('record[0]',record[0])
         }
       }}
       pagination={{ hideOnSinglePage: true}}

@@ -6,14 +6,14 @@ const generateCourseTermName = (course) => {
 }
 
 const generateEndorsementColumns = (endorsements) => {
-  const termIndexes = {
-    "Spring 1 2022": 1,
-    "Spring 2 2022": 2,
-    "Summer 1 2022": 3,
-    "Spring 2 2022": 4,
-    "Fall 1 2022": 5,
-    "Fall 2 2022": 6,    
-  }
+  // const termIndexes = {
+  //   "Spring 1 2022": 1,
+  //   "Spring 2 2022": 2,
+  //   "Summer 1 2022": 3,
+  //   "Summer 2 2022": 4,
+  //   "Fall 1 2022": 5,
+  //   "Fall 2 2022": 6,    
+  // }
   // get all endorsement terms, store in "allEndorsementTerms"
   // note: flat() at the bottom is used to convert an array of arrays
   // into one big array of strings
@@ -55,13 +55,13 @@ const generateEndorsementTableRows = (endorsements) => {
           recommended: recommended,
         }
         let recommendedText = '';
-      if(endorsement.rec_pos === 3){
+      if(endorsement.rec_pos === 1){
         recommendedText = '\n(#1 Recommendation)'
       } 
       if(endorsement.rec_pos === 2){
         recommendedText = '\n(#2 Recommendation)'
       } 
-      if(endorsement.rec_pos === 1){
+      if(endorsement.rec_pos === 3){
         recommendedText = '\n(#3 Recommendation)'
       }
       row["name"] = endorsement.name + recommendedText
@@ -83,13 +83,13 @@ const EndorsementsTable = (props) => {
     <div>
       <Table 
       dataSource={tableRows} 
-      columns={tableColumns} 
+      columns={tableColumns}
       scroll={{ x: 900 }}
       rowClassName={(record, index) => ("recommended_"+record.recommended)}
       rowSelection={{
         type: "radio",
         onChange: (record) => {
-          props.setSelection(record[0]);
+          props.setSelectedEndorsement(record[0]);
         }
     }}
       pagination={{ hideOnSinglePage: true}}

@@ -515,7 +515,7 @@
                             "id": 36,
                             "unique_id": "11_36",
                             "name": "ED 8380 STEM Instructional Design",
-                            "term": "Spring 1",
+                            "term": "Spring 2",
                             "year": "2022",
                             "credential_name": "Steam Teaching"
                         },
@@ -523,7 +523,7 @@
                             "id": 37,
                             "unique_id": "11_37",
                             "name": "ED 8380 STEM Assessment",
-                            "term": "Spring 1",
+                            "term": "Summer 1",
                             "year": "2022",
                             "credential_name": "Steam Teaching"
                         }
@@ -540,10 +540,10 @@
                     "unique_id": "7_X",
                     "courses": [
                         {
-                            "id": 56,
-                            "unique_id": "7_56",
-                            "name": "ED 8380 Engaging Students in Data Analysis, Statistics, and Probability",
-                            "term": "Spring 2",
+                            "id": 53,
+                            "unique_id": "6_53",
+                            "name": "EDHD 8310 Introduction to Coding with Block-Based Programming",
+                            "term": "Spring 1",
                             "year": "2022",
                             "credential_name": "Computer Science"
                         },
@@ -584,10 +584,10 @@
                             "credential_name": "Math"
                         },
                         {
-                            "id": 53,
-                            "unique_id": "6_53",
-                            "name": "EDHD 8310 Introduction to Coding with Block-Based Programming",
-                            "term": "Spring 1",
+                            "id": 56,
+                            "unique_id": "7_56",
+                            "name": "ED 8380 Engaging Students in Data Analysis, Statistics, and Probability",
+                            "term": "Spring 2",
                             "year": "2022",
                             "credential_name": "Math"
                         },
