@@ -20,6 +20,7 @@ const generateConfirmColumns = (selections) => {
           // handle Masters and Endorsements
           selection.courses.forEach(course => {
             const termName = generateCourseTermName(course)
+            // if termsArray already lists a course in this term
             termsArray.push(termName)
           })
         } else {
@@ -71,7 +72,14 @@ const generateConfirmColumns = (selections) => {
         row["name"] = selection.name
         // dynamically adds the course term as a key-value pair for this row
         selection.courses.forEach(course => {
-            row[generateCourseTermName(course)] = course.name
+            const termName = generateCourseTermName(course)
+            // if this term already has an entry
+            if(row[termName] !== undefined){
+              row[termName] += '\n\n' + course.name
+            } else {
+            // if this term does not have an entry
+              row[termName] = course.name
+            }
         })
         return row;
       }

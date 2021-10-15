@@ -38,7 +38,7 @@ const PathwaysPage = (props) => {
     }))
   }, [selectionIDs]);
 
-  // console.log('selections right before render',selections)
+  console.log('selections right before render',selections)
   return (
     <React.Fragment>
       <div className="fullpage-card">

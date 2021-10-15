@@ -50,7 +50,7 @@ const generateMastersTableRows = (pathways) => {
             // console.log('UNDEFINED')
             course.term = 'No date'
             course.year = ''
-          } 
+          }
           const courseTerm = course.term + " " + course.year;
           // check if an entry for a courseTerm exists
           // if so, and append the newest course's name, course.name 
@@ -97,7 +97,6 @@ const MastersDegreeTable = (props) => {
   const courseTermNames = getCourseTermNames(props.mastersDegrees);
   const tableColumns = generateMastersTableColumns(courseTermNames);
   const tableRows = generateMastersTableRows(props.mastersDegrees);
-
   // useEffect((evt) => {
   //   if(props.selectedMastersDegree === undefined || props.selectedMastersDegree.length === 0){
   //     console.log('GOOD')
@@ -109,6 +108,7 @@ const MastersDegreeTable = (props) => {
   // console.log('masters tableRows',tableRows)
   // console.log('props.selectedMastersDegree',props.selectedMastersDegree)
   const selection = props.selectedMastersDegree;
+  // console.log("~ selection", selection)
 
     return (
     <div>
@@ -119,7 +119,7 @@ const MastersDegreeTable = (props) => {
       rowClassName={(record, index) => ("recommended_"+record.recommended)}
       rowSelection={{
         // selectedRowKeys: selection,
-        type: "radio",
+        type: "checkbox",
         onChange: (record) => {
           // props.setSelectedMastersDegree('');
           props.setSelectedMastersDegree(record[0]);
