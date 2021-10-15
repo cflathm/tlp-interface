@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import { Table } from 'antd';
 
 /* TODO
@@ -22,13 +22,12 @@ const getCourseTermNames = (pathways) => {
 const generateMastersTableRows = (pathways) => {
   // this map returns an array of all rows, formatted to match key-value pairs in "dataSource"
   // for each pathway in pathways, return json object
-  // console.log('pathways',pathways)
   return pathways.map(pathway => {
-      // const recommended = pathway.rec_pos
       const row = {
           dataIndex: pathway.unique_id,
           key: pathway.unique_id,
           recommended: pathway.rec_pos,
+          enabled: true,
       }
       let recommendedText = '';
       if(pathway.rec_pos === 3){
@@ -45,9 +44,7 @@ const generateMastersTableRows = (pathways) => {
 
       // dynamically adds the course term as a key-value pair for this row
       pathway.courses.forEach(course => {
-        // console.log('course',course)
           if(course.term === undefined){
-            // console.log('UNDEFINED')
             course.term = 'No date'
             course.year = ''
           }
@@ -57,9 +54,6 @@ const generateMastersTableRows = (pathways) => {
           if(row[courseTerm] !== undefined){
               row[courseTerm] += ("\n\n" + course.name + "\n")
           } 
-          // else if(row[courseTerm] === 'undefined undefined'){
-          //   row[courseTerm] = 'No date'
-          // } 
           else {
               row[courseTerm] = course.name
           }
@@ -91,40 +85,36 @@ const generateMastersTableColumns = (courseTermNames) => {
   return columns
 }
 
-
-
 const MastersDegreeTable = (props) => {
+  // tablesEnabled is passed down to mastersTable and endorsementsTable
+  // tablesEnabled is initially set false because it will be switched to true on first render
+  // const [tablesEnabled, setTableEnabled] = useState(false);
   const courseTermNames = getCourseTermNames(props.mastersDegrees);
   const tableColumns = generateMastersTableColumns(courseTermNames);
   const tableRows = generateMastersTableRows(props.mastersDegrees);
-  // useEffect((evt) => {
-  //   if(props.selectedMastersDegree === undefined || props.selectedMastersDegree.length === 0){
-  //     console.log('GOOD')
-  //   } else {
-  //     console.log('throw error/alert')
-  //   }
-  // },[props.selectedMastersDegree])
-  // console.log('masters tableColumns',tableColumns)
-  // console.log('masters tableRows',tableRows)
-  // console.log('props.selectedMastersDegree',props.selectedMastersDegree)
-  const selection = props.selectedMastersDegree;
-  // console.log("~ selection", selection)
 
     return (
     <div>
-      <Table 
+      <Table
       scroll={{ x: 900 }}
-      dataSource={tableRows} 
+      dataSource={tableRows}
       columns={tableColumns}
-      rowClassName={(record, index) => ("recommended_"+record.recommended)}
+      rowClassName={record => {
+        if(props.tablesEnabled){
+          return ("recommended_"+record.recommended)
+        } else {
+          if(record.key === props.selectedMastersDegree){
+            return ("recommended_"+record.recommended)
+          }
+          return "disabled-row"
+        }
+      }}
+      // rowClassName={record => !record.enabled ? "disabled-row":("recommended_"+record.recommended)}
       rowSelection={{
         // selectedRowKeys: selection,
         type: "checkbox",
         onChange: (record) => {
-          // props.setSelectedMastersDegree('');
           props.setSelectedMastersDegree(record[0]);
-          // console.log('props.selectedMastersDegree',props.selectedMastersDegree)
-          // console.log('record[0]',record[0])
         }
       }}
       pagination={{ hideOnSinglePage: true}}

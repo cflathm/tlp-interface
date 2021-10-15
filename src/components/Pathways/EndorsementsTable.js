@@ -76,8 +76,6 @@ const generateEndorsementTableRows = (endorsements) => {
 const EndorsementsTable = (props) => {
   const tableColumns = generateEndorsementColumns(props.endorsements)
   const tableRows = generateEndorsementTableRows(props.endorsements);
-  // console.log('Endorsements tableColumns',tableColumns)
-  // console.log('Endorsements tableRows',tableRows)
 
   return (
     <div>
@@ -85,9 +83,18 @@ const EndorsementsTable = (props) => {
       dataSource={tableRows} 
       columns={tableColumns}
       scroll={{ x: 900 }}
-      rowClassName={(record, index) => ("recommended_"+record.recommended)}
+      rowClassName={record => {
+        if(props.tablesEnabled){
+          return ("recommended_"+record.recommended)
+        } else {
+          if(record.key === props.selectedEndorsement){
+            return ("recommended_"+record.recommended)
+          }
+          return "disabled-row"
+        }
+      }}      
       rowSelection={{
-        type: "radio",
+        type: "checkbox",
         onChange: (record) => {
           props.setSelectedEndorsement(record[0]);
         }

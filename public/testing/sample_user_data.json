@@ -156,7 +156,7 @@
                     "category": "Master's Degree",
                     "description": "Specific Masters degree.",
                     "rec_value": "0.01",
-                    "rec_pos": 0,
+                    "rec_pos": 3,
                     "unique_id": "14_X",
                     "courses": [
                         {

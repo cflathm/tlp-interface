@@ -15,30 +15,34 @@ const PathwaysPage = (props) => {
   const [selectedEndorsement, setSelectedEndorsement] = useState([]);
   const [selectedMicrocredential, setSelectedMicrocredential] = useState([]);
   const [selectionIDs, setSelectionIDs] = useState([]);
-  const [selections, setSelectionsToPass] = useState([]); // this is what we eventually pass to confirmPage
-  const allOptions = Array.from(props.allOptions) 
+  const [selections, setSelections] = useState([]); // this is what we eventually pass to confirmPage
+  // this is passed to Masters+Endorsements tables
+  // (initialized to false because it switches on intiail render)
+  const [tablesEnabled, setTableEnabled] = useState(false);
+  const allOptions = Array.from(props.allOptions)
 
   // Update selectionIDs when the user makes a selection
   useEffect(() => {
     // console.log('setSelectionIDs',[selectedMastersDegree, selectedEndorsement, selectedMicrocredential])
-    // if this selection isn't already defined
-    if(selectedMastersDegree===undefined || selectedMastersDegree.length!==0){
-      // console.log('don"t throw alert')
-    }
-    else {
-      // console.log('throw alert')
-    }
     setSelectionIDs([selectedMastersDegree, selectedEndorsement, selectedMicrocredential]);
   }, [selectedMastersDegree,selectedEndorsement,selectedMicrocredential]);
 
-  // Update selections when selectionIDs is updated
+  // Every time selectionIDs changes...
   useEffect(() => {
-    setSelectionsToPass(allOptions.filter(pathway => {
+      // ... update selections when selectionIDs is updated
+    setSelections(allOptions.filter(pathway => {
       return selectionIDs.flat().includes(pathway.unique_id)
     }))
   }, [selectionIDs]);
 
-  console.log('selections right before render',selections)
+  useEffect(() => {
+    // ...set all selections to disabled
+    setTableEnabled(!tablesEnabled)
+  },[selectedMastersDegree,selectedEndorsement]);
+
+  // console.log('selections right before render',selections)
+  // console.log('selections right before render',selections)
+
   return (
     <React.Fragment>
       <div className="fullpage-card">
@@ -52,6 +56,7 @@ const PathwaysPage = (props) => {
             mastersDegrees={props.pathways["Master's Degree"]} 
             setSelectedMastersDegree={setSelectedMastersDegree}
             selectedMastersDegree={selectedMastersDegree}
+            tablesEnabled={tablesEnabled}
           />
           <h3>Endorsements</h3>
           <h4 style={{color:"grey"}}>A specialized track of pathways that results in a certificate (can optionally be combined with up to 3 micro-credentials)</h4>
@@ -60,6 +65,7 @@ const PathwaysPage = (props) => {
             allOptions={props.allOptions} 
             setSelectedEndorsement={setSelectedEndorsement}
             selectedEndorsement={selectedEndorsement}
+            tablesEnabled={tablesEnabled}
           />
           <h3>Micro-credentials</h3>
           <h4 style={{color:"grey"}}>Short modules on a specific topic (you can select 1-2 per period, or optionally add max. 1 per period to an MEd or endorsement)</h4>

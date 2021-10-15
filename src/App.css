@@ -1,4 +1,4 @@
-/* Used in every page */
+/* ---------------------------Used in every page---------------------------*/
 
 .App {
   background-color: hsl(270, 100%, 97%);
@@ -66,7 +66,7 @@
   margin: 0px;
 }
 
-/* Used first in Recommendations Page */
+/* ---------------------------Used first in Recommendations Page--------------------------- */
 
 .fullpage-card .ant-table {
   margin-bottom: 10vh;
@@ -78,7 +78,7 @@
   background-color: green;
 }
 
-/* Used first in Pathways Page */
+/* ---------------------------Used first in Pathways Page--------------------------- */
 
 .fullpage-card .last-table {
   margin-bottom: -12vh;
@@ -110,31 +110,40 @@ table tr td.ant-table-selection-column-microcredentials {
   white-space: pre-wrap;
   background-color: rgba(223, 255, 229, 0.221);
   font-weight:600;
+  transition-duration: 50ms;
 }
 .recommended_2 {
   white-space: pre-wrap;
   background-color: rgba(223, 255, 229, 0.687);
   font-weight:600;
+  transition-duration: 50ms;
 }
 .recommended_1 {
   white-space: pre-wrap;
   background-color: rgb(223, 255, 229);
   font-weight:600;
+  transition-duration: 50ms;
 }
 
-.recommended_1:hover{
+/* .recommended_1:hover{
   background-color: #c4e6ca;
-  ;
 }
 .recommended_2:hover{
   background-color: #c4e6ca;
 }
 .recommended_3:hover{
   background-color: #c4e6ca;
-}
+} */
 
 /* hide check all box at top of tables */
 .ant-table-thead tr .ant-table-selection-column div { 
   display: none; 
 }
 
+.disabled-row {
+  background-color: #f4f4f4;
+  pointer-events: none;
+  color:rgb(120, 120, 120);
+  transition-duration: 50ms;
+  transition-property: background-color;
+}
