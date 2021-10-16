@@ -5,15 +5,29 @@ const generateCourseTermName = (course) => {
   return course.term + " " + course.year;
 }
 
+const sortColumnsChronollogically = (columns) => {
+  const termIndexes = {
+    "Spring 1 2022": 1,
+    "Spring 2 2022": 2,
+    "Summer 1 2022": 3,
+    "Summer 2 2022": 4,
+    "Fall 1 2022": 5,
+    "Fall 2 2022": 6,    
+  }
+
+  columns.sort((colA,colB) => {
+    if(termIndexes[colA.title] > termIndexes[colB.title]){
+      return 1
+    } else if (termIndexes[colA.title] < termIndexes[colB.title]){
+      return -1
+    } else {
+      return 0
+    }
+  })
+  return columns
+}
+
 const generateEndorsementColumns = (endorsements) => {
-  // const termIndexes = {
-  //   "Spring 1 2022": 1,
-  //   "Spring 2 2022": 2,
-  //   "Summer 1 2022": 3,
-  //   "Summer 2 2022": 4,
-  //   "Fall 1 2022": 5,
-  //   "Fall 2 2022": 6,    
-  // }
   // get all endorsement terms, store in "allEndorsementTerms"
   // note: flat() at the bottom is used to convert an array of arrays
   // into one big array of strings
@@ -40,7 +54,8 @@ const generateEndorsementColumns = (endorsements) => {
     key: 'name',
     width: '190px'
   })
-  return columns
+  const sortedColumns = sortColumnsChronollogically(columns)
+  return sortedColumns
 }
 
 const generateEndorsementTableRows = (endorsements) => {

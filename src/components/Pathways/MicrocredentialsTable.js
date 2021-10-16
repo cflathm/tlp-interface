@@ -143,7 +143,7 @@ import { Table, Checkbox } from 'antd';
           props.setSelectedMicrocredential(selectedMicro => [...selectedMicro, record.spring22_2ID]);
         } else {
           props.setSelectedMicrocredential(props.selectedMicrocredential.filter(thisElement => thisElement !== record.spring22_2ID));
-        }  
+        }
       }
       if(columnKey === "summer22_1"){
         if(record.summer22_1 === true){

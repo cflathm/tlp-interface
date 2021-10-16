@@ -5,6 +5,28 @@ import { Table } from 'antd';
   - Change "recommended" column to implement color scale
 */
 
+const sortColumnsChronollogically = (columns) => {
+  const termIndexes = {
+    "Spring 1 2022": 1,
+    "Spring 2 2022": 2,
+    "Summer 1 2022": 3,
+    "Summer 2 2022": 4,
+    "Fall 1 2022": 5,
+    "Fall 2 2022": 6,    
+  }
+
+  columns.sort((colA,colB) => {
+    if(termIndexes[colA.title] > termIndexes[colB.title]){
+      return 1
+    } else if (termIndexes[colA.title] < termIndexes[colB.title]){
+      return -1
+    } else {
+      return 0
+    }
+  })
+  return columns
+}
+
 // param pathways: an array of pathways
 const getCourseTermNames = (pathways) => {
   const courseTermNames = []
@@ -19,7 +41,7 @@ const getCourseTermNames = (pathways) => {
   return courseTermNames
 }
 
-const generateMastersTableRows = (pathways) => {
+const generateMastersTableRows = (pathways) => {  
   // this map returns an array of all rows, formatted to match key-value pairs in "dataSource"
   // for each pathway in pathways, return json object
   return pathways.map(pathway => {
@@ -53,7 +75,7 @@ const generateMastersTableRows = (pathways) => {
           // if so, and append the newest course's name, course.name 
           if(row[courseTerm] !== undefined){
               row[courseTerm] += ("\n\n" + course.name + "\n")
-          } 
+          }
           else {
               row[courseTerm] = course.name
           }
@@ -82,7 +104,8 @@ const generateMastersTableColumns = (courseTermNames) => {
     key: 'name',
     // width: '240px'
   });
-  return columns
+  const sortedColumns = sortColumnsChronollogically(columns)
+  return sortedColumns
 }
 
 const MastersDegreeTable = (props) => {
@@ -92,6 +115,8 @@ const MastersDegreeTable = (props) => {
   const courseTermNames = getCourseTermNames(props.mastersDegrees);
   const tableColumns = generateMastersTableColumns(courseTermNames);
   const tableRows = generateMastersTableRows(props.mastersDegrees);
+
+
 
     return (
     <div>

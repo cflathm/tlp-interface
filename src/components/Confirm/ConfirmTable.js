@@ -3,16 +3,30 @@ import { Table } from 'antd';
 
 // CONFIRMTABLE: CHANGE COLUMNS TO BE TERM, YEAR, “pathway” it contributes to, ?confirm checkbox? (prob not)
   
+const sortColumnsChronollogically = (columns) => {
+  const termIndexes = {
+    "Spring 1 2022": 1,
+    "Spring 2 2022": 2,
+    "Summer 1 2022": 3,
+    "Summer 2 2022": 4,
+    "Fall 1 2022": 5,
+    "Fall 2 2022": 6,    
+  }
+
+  columns.sort((colA,colB) => {
+    if(termIndexes[colA.title] > termIndexes[colB.title]){
+      return 1
+    } else if (termIndexes[colA.title] < termIndexes[colB.title]){
+      return -1
+    } else {
+      return 0
+    }
+  })
+  return columns
+}
+
+
 const generateConfirmColumns = (selections) => {
-  // const termIndexes = {
-  //   "Spring 1 2022": 1,
-  //   "Spring 2 2022": 2,
-  //   "Summer 1 2022": 3,
-  //   "Summer 2 2022": 4,
-  //   "Fall 1 2022": 5,
-  //   "Fall 2 2022": 6,    
-  // }
-      // console.log("~ selections", selections)
       const allSelectedTerms = selections.map(selection => {
         // we want termsArray to be hashes of each courseTermName, pointing to each course.name with that
         const termsArray = []
@@ -30,11 +44,8 @@ const generateConfirmColumns = (selections) => {
         }
         return termsArray
       }).flat()
-      // console.log("allSelectedTerms", allSelectedTerms)
-
 
     const filteredSelectedTerms = [...new Set(allSelectedTerms)]
-    // console.log("~ filteredSelectedTerms", filteredSelectedTerms)
     // declare "const columns" by mapping over filteredSelectedTerms...
     const columns = filteredSelectedTerms.map(termName => {
       // TODO: use "termIndexes" to map each term name to its index?
@@ -50,7 +61,8 @@ const generateConfirmColumns = (selections) => {
       key: 'name',
       width: '190px'
     })
-    return columns
+    const sortedColumns = sortColumnsChronollogically(columns)
+    return sortedColumns
 }
 
   const generateCourseTermName = (course) => {
