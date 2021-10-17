@@ -12,15 +12,13 @@ function App() {
   // data will hold data from json/api response
   const [data, setData] = useState('');
   const [allOptions, setallOptions] = useState('');
-
+  
   // borrowed code to fetch json
   const getData=()=>{
-    fetch('testing/sample_user_data.json'
+    fetch('http://192.168.206.1:5000/users'
     ,{
-      headers : { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-       }
+      method:'POST',
+      body : JSON.stringify({"teacherId": "1","randomId":"6tGlMJu98v"})
     }
     ).then(function(response){
         return response.json();

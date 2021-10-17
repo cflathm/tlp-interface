@@ -58,6 +58,9 @@ const PathwaysPage = (props) => {
             selectedMastersDegree={selectedMastersDegree}
             tablesEnabled={tablesEnabled}
           />
+
+          <h4 style={{color:"red"}}>Non-Stem Teachers, please be aware that you will not receive your course funds until you take either the STEAM Endorsement or Microcredential</h4>
+
           <h3>Endorsements</h3>
           <h4 style={{color:"grey"}}>A specialized track of pathways that results in a certificate (can optionally be combined with up to 3 micro-credentials)</h4>
           <EndorsementsTable 

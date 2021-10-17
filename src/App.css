@@ -29,6 +29,19 @@
   position: relative;
 }
 
+.opt-out {
+  position: relative;
+  margin-left: 60%;
+}
+
+.opt-out button {
+  background-color: #ff8585;
+  border-color: #ff8585;
+  margin-top: 30px;
+  position: relative;
+}
+
+
 .banner {
   background-color: #522D80;
   margin: 0 auto;
