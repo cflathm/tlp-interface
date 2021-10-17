@@ -8,12 +8,6 @@ import WelcomePage from './components/Welcome/WelcomePage';
 import Submitted from './components/Submitted/SubmittedPage'
 import { useState, useEffect } from 'react';
 
-/*
-TODO:
-  later:
-    - define behavior for going back (localstorage?) and bad urls and whatnot
-*/
-
 function App() {
   // data will hold data from json/api response
   const [data, setData] = useState('');
@@ -33,11 +27,9 @@ function App() {
       })
       .then(function(myJson) {
         setData(myJson);
-        // console.log(myJson)
 
         // make allOptions array
         const pathwayObjects = myJson.data.options;
-        // console.log('App.js: pathwayObjects',pathwayObjects)
         let unflatAllOptions = [
           pathwayObjects["Endorsement"],
           pathwayObjects["Master's Degree"],
@@ -50,7 +42,6 @@ function App() {
           return coursesInThisRow
         })
         unflatAllOptions.push(coursesInMicrocredential.flat());
-        // console.log("unflatAllOptions after pathwayObjects['Microcredential']",unflatAllOptions);
         setallOptions(unflatAllOptions.flat())
       });
   }
@@ -62,7 +53,6 @@ function App() {
 
   return (
     <div className="App">
-      {/* TODO: Add breadcrumbs */}
       <Router>
         <Route path="/" exact component={() => data && <WelcomePage firstName={data.data.First_Name} />} />
         <Route path="/recommendations" exact component={() => data && <RecommendationsPage recommendations={data.data.recommendations}/>} />
