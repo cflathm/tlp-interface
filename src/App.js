@@ -13,21 +13,56 @@ function App() {
   const [data, setData] = useState('');
   const [allOptions, setallOptions] = useState('');
   
+  // chris's getData using API call
+  // const getData=()=>{
+  //   fetch('http://192.168.206.1:5000/users'
+  //   ,{
+  //     method:'POST',
+  //     body : JSON.stringify({"teacherId": "1","randomId":"6tGlMJu98v"})
+  //   }
+  //   ).then(function(response){
+  //       return response.json();
+  //     })
+  //     .then(function(myJson) {
+  //       setData(myJson);
+
+  //       // make allOptions array
+  //       const pathwayObjects = myJson.data.options;
+  //       let unflatAllOptions = [
+  //         pathwayObjects["Endorsement"],
+  //         pathwayObjects["Master's Degree"],
+  //       ]
+  //       // here we are drilling into "Microcredentials" and getting each course out, and pushing the result to unflatAll
+  //       let coursesInMicrocredential = pathwayObjects["Microcredential"].map(thisRow => {
+  //         let coursesInThisRow = thisRow.courses.map(course => {
+  //           return course
+  //         })
+  //         return coursesInThisRow
+  //       })
+  //       unflatAllOptions.push(coursesInMicrocredential.flat());
+  //       setallOptions(unflatAllOptions.flat())
+  //     });
+  // }
+  // steve's getData: uses test json file
   // borrowed code to fetch json
   const getData=()=>{
-    fetch('http://192.168.206.1:5000/users'
+    fetch('testing/sample_user_data.json'
     ,{
-      method:'POST',
-      body : JSON.stringify({"teacherId": "1","randomId":"6tGlMJu98v"})
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
     }
     ).then(function(response){
         return response.json();
       })
       .then(function(myJson) {
         setData(myJson);
+        // console.log(myJson)
 
         // make allOptions array
         const pathwayObjects = myJson.data.options;
+        // console.log('App.js: pathwayObjects',pathwayObjects)
         let unflatAllOptions = [
           pathwayObjects["Endorsement"],
           pathwayObjects["Master's Degree"],
@@ -40,6 +75,7 @@ function App() {
           return coursesInThisRow
         })
         unflatAllOptions.push(coursesInMicrocredential.flat());
+        // console.log("unflatAllOptions after pathwayObjects['Microcredential']",unflatAllOptions);
         setallOptions(unflatAllOptions.flat())
       });
   }
