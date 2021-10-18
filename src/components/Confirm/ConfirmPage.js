@@ -16,7 +16,9 @@ const ConfirmPage = (props) => {
   }
 
   useEffect(() => {
-    if(!checkboxesState.includes(false)){
+    if(checkboxesState.includes(false)){
+      setSubmitReady(false)
+    } else {
       setSubmitReady(true)
     }
   },[checkboxesState])

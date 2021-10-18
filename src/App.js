@@ -43,8 +43,8 @@ function App() {
   //       setallOptions(unflatAllOptions.flat())
   //     });
   // }
+
   // steve's getData: uses test json file
-  // borrowed code to fetch json
   const getData=()=>{
     fetch('testing/sample_user_data.json'
     ,{
