@@ -15,7 +15,7 @@ function App() {
   
   // borrowed code to fetch json
   const getData=()=>{
-    fetch('http://192.168.206.1:5000/users'
+    fetch('http://trace.computing.clemson.edu/api/users'
     ,{
       method:'POST',
       body : JSON.stringify({"teacherId": "1","randomId":"6tGlMJu98v"})
