@@ -16,7 +16,6 @@ const ConfirmPage = (props) => {
   }
 
   useEffect(() => {
-    console.log(!checkboxesState.includes(false))
     if(!checkboxesState.includes(false)){
       setSubmitReady(true)
     }

@@ -5,7 +5,6 @@ import { Table, Checkbox } from 'antd';
   // help from https://stackoverflow.com/a/63008461/13741755
 
   const MicrocredentialsTable = (props) => {
-    // console.log('micro props.microcredentials',props.pathways.pathways.Microcredential)
     let credentialRecommendations = {};
     let credentials = props.pathways.pathways.Microcredential;
     credentials.forEach(credential => {
@@ -20,12 +19,7 @@ import { Table, Checkbox } from 'antd';
         recommendedText = '\n(#1 Recommendation)'
       }
       credentialRecommendations[credential.name] = credential.name + recommendedText
-      // row["name"] = pathway.name + recommendedText
     })
-    // console.log('here',credentialRecommendations)
-    // console.log('here2',props.pathways.pathways.Microcredential[0].name)
-    // console.log('here3',credentialRecommendations[props.pathways.pathways.Microcredential[0]])
-    // console.log('here4',props.pathways.pathways.Microcredential[0].rec_pos)
     const [checkboxState, setCheckboxState] = useState([
       {
         key: 1,

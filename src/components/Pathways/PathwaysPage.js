@@ -23,7 +23,6 @@ const PathwaysPage = (props) => {
 
   // Update selectionIDs when the user makes a selection
   useEffect(() => {
-    // console.log('setSelectionIDs',[selectedMastersDegree, selectedEndorsement, selectedMicrocredential])
     setSelectionIDs([selectedMastersDegree, selectedEndorsement, selectedMicrocredential]);
   }, [selectedMastersDegree,selectedEndorsement,selectedMicrocredential]);
 
@@ -39,9 +38,6 @@ const PathwaysPage = (props) => {
     // ...set all selections to disabled
     setTableEnabled(!tablesEnabled)
   },[selectedMastersDegree,selectedEndorsement]);
-
-  // console.log('selections right before render',selections)
-  // console.log('selections right before render',selections)
 
   return (
     <React.Fragment>

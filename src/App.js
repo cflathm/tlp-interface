@@ -58,11 +58,9 @@ function App() {
       })
       .then(function(myJson) {
         setData(myJson);
-        // console.log(myJson)
 
         // make allOptions array
         const pathwayObjects = myJson.data.options;
-        // console.log('App.js: pathwayObjects',pathwayObjects)
         let unflatAllOptions = [
           pathwayObjects["Endorsement"],
           pathwayObjects["Master's Degree"],
@@ -75,7 +73,6 @@ function App() {
           return coursesInThisRow
         })
         unflatAllOptions.push(coursesInMicrocredential.flat());
-        // console.log("unflatAllOptions after pathwayObjects['Microcredential']",unflatAllOptions);
         setallOptions(unflatAllOptions.flat())
       });
   }
