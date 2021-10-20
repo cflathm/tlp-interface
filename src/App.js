@@ -5,20 +5,20 @@ import RecommendationsPage from './components/Recommendations/RecommendationsPag
 import PathwaysPage from './components/Pathways/PathwaysPage';
 import ConfirmPage from './components/Confirm/ConfirmPage';
 import WelcomePage from './components/Welcome/WelcomePage';
-import Submitted from './components/Submitted/SubmittedPage'
 import { useState, useEffect } from 'react';
 
 function App() {
   // data will hold data from json/api response
   const [data, setData] = useState('');
   const [allOptions, setallOptions] = useState('');
+  let params = (new URL(document.location)).searchParams;
   // test link for API: http://trace.computing.clemson.edu?teacherId=1&randomID=6tGlMJu98v
+  // test link for API: http://trace.computing.clemson.edu?teacherId=219&randomId=test
   // test link for lcl: http://localhost:3000/?teacherId=1&randomId=6tGlMJu98v
   // test link for lcl: http://localhost:3000/?teacherId=219&randomId=test
   // "teacherId": "1","randomId":"6tGlMJu98v"
   // Chris's code to fetch json from API------------------------
   const getData=()=>{
-    let params = (new URL(document.location)).searchParams;
     fetch('http://trace.computing.clemson.edu/api/users'
     ,{
       method:'POST',
@@ -89,15 +89,14 @@ function App() {
   },[])
 
 
-
+  console.log('data',data)
   return (
     <div className="App">
       <Router>
-        <Route path="/" exact component={() => data && <WelcomePage firstName={data.data.First_Name} />} />
-        <Route path="/recommendations" exact component={() => data && <RecommendationsPage recommendations={data.data.recommendations}/>} />
+        <Route path="/" exact component={() => data && <WelcomePage firstName={data.data.First_Name} Exp_Condition={data.data.Exp_Condition} />} />
+        <Route path="/recommendations" exact component={() => data && <RecommendationsPage recommendations={data.data.recommendations} Exp_Condition={data.data.Exp_Condition}/>} />
         <Route path="/pathways" exact component={() => data && <PathwaysPage pathways={data.data.options} allOptions={allOptions}/>} />
-        <Route path="/confirm" exact component={() => data && <ConfirmPage allOptions={allOptions}/>} />
-        <Route path="/submitted" exact component={() => data && <Submitted/>} />
+        <Route path="/confirm" exact component={() => data && <ConfirmPage allOptions={allOptions} userInfo={{"teacherId": params.get('teacherId'),"randomId":params.get('randomId')}}/>} />
       </Router>
       <div className="footer">
         <p>Having issues? Contact Stephanie Madison for help.</p>

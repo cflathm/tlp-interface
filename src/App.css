@@ -17,6 +17,12 @@
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
+.fullpage-card img{
+  display: block;
+  margin: 0 auto;
+  
+}
+
 .next-link {
   position: relative;
   float: right;
