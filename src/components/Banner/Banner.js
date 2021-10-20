@@ -1,6 +1,6 @@
 import React from 'react';
 import Paw from '../../images/Clemson_Paw.png';
-import { Progress } from 'antd';
+// import { Progress } from 'antd';
 
 
 const Banner = () => {

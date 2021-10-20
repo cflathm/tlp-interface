@@ -94,7 +94,7 @@ const generateConfirmColumns = (selections) => {
             }
         })
         return row;
-      }
+      } 
     });
 
     const degreeAndEndorsementRows = selectedDegreesAndEndorsements.filter(Boolean)
@@ -151,7 +151,6 @@ const ConfirmTable = (props) => {
       scroll={{ x: 900 }}
       dataSource={tableRows} 
       columns={tableColumns} 
-      // rowSelection={{type: "radio"}}
       pagination={{ hideOnSinglePage: true}}
       />
     </div>
