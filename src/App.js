@@ -12,13 +12,17 @@ function App() {
   // data will hold data from json/api response
   const [data, setData] = useState('');
   const [allOptions, setallOptions] = useState('');
-  
+  // test link for API: http://trace.computing.clemson.edu?teacherId=1&randomID=6tGlMJu98v
+  // test link for lcl: http://localhost:3000/?teacherId=1&randomId=6tGlMJu98v
+  // test link for lcl: http://localhost:3000/?teacherId=219&randomId=test
+  // "teacherId": "1","randomId":"6tGlMJu98v"
   // Chris's code to fetch json from API------------------------
   const getData=()=>{
+    let params = (new URL(document.location)).searchParams;
     fetch('http://trace.computing.clemson.edu/api/users'
     ,{
       method:'POST',
-      body : JSON.stringify({"teacherId": "1","randomId":"6tGlMJu98v"})
+      body : JSON.stringify({"teacherId": params.get('teacherId'),"randomId":params.get('randomId')})
     }
     ).then(function(response){
         return response.json();

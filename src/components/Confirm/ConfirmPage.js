@@ -16,7 +16,7 @@ const ConfirmPage = (props) => {
   // const getData=()=>{
   //   fetch('http://trace.computing.clemson.edu/api/users'
   //   ,{
-  //     method:'POST',
+  //     method:'PUT',
   //     body : JSON.stringify({"teacherId": "1","randomId":"6tGlMJu98v"})
   //   }
   //   ).then(function(response){
