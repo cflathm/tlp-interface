@@ -176,10 +176,10 @@ const ConfirmPage = (props) => {
   const PostSubmit = () => {
     return <React.Fragment>
       {console.log(response)}
-        {response.status === 200 && <div>
+        {response.status === 501 && <div>
           <h2>Submission Error</h2>
             <h4 style={{color: "#222222"}}>It appears as if you have already completed the commitment form. If you beleive this to be an error or wish to change your selections please contact Stephanie Madision. Email: <a href="mailto:stephm@g.clemson.edu">stephm@g.clemson.edu</a></h4></div>}
-        {response.status === 501 && <div>
+        {response.status === 200 && <div>
           <h2>Submission complete</h2>
             <h4 style={{color: "#222222"}}>Thank you for registering. We will send your schedule through email. </h4>
             <p>You may close this tab.</p>
