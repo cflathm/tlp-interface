@@ -175,7 +175,7 @@ const ConfirmPage = (props) => {
   }
 
   const PostSubmit = () => {
-    survey_link = 'https://google.com?teacherId=' + props.userInfo.teacherId
+    const survey_link = 'https://google.com?teacherId=' + props.userInfo.teacherId
     return <React.Fragment>
       {console.log(response)}
         {response.status === 501 && <div>
