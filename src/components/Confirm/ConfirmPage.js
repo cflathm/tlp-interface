@@ -148,6 +148,7 @@ const ConfirmPage = (props) => {
           </Checkbox>
         }
         <br></br>
+        <br></br>
         {containsMastersDegree(selections) && 
           <Checkbox id='6' checked={checkboxesState[6]} onChange={handleCheckboxChange()}> 
           My last degree earned was completed with a GPA of less than 3.0. Therefore, I will need to submit GRE or MAT scores as a part of the application to Clemson University.
@@ -181,8 +182,9 @@ const ConfirmPage = (props) => {
             <h4 style={{color: "#222222"}}>It appears as if you have already completed the commitment form. If you beleive this to be an error or wish to change your selections please contact Stephanie Madision. Email: <a href="mailto:stephm@g.clemson.edu">stephm@g.clemson.edu</a></h4></div>}
         {response.status === 200 && <div>
           <h2>Submission complete</h2>
-            <h4 style={{color: "#222222"}}>Thank you for registering. We will send your schedule through email. </h4>
-            <p>You may close this tab.</p>
+            <h4 style={{color: "#222222"}}>Thank you for registering. Your submission has been saved. We will be in contact with you about next steps. </h4>
+            <h4 style={{color: "#222222"}}>Please navigate to the following link and take the following survey about your experience. <a>https://google.com?teacherId={props.userInfo.teacherId}</a></h4>
+            <p>You may close this tab after completing your survey.</p>
             </div>}
       </React.Fragment>
   }
