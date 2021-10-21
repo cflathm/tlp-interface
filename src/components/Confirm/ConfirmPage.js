@@ -62,7 +62,7 @@ const ConfirmPage = (props) => {
 
   const sendData=()=>{
       if(outboundJSON != {}){
-        fetch('http://trace.computing.clemson.edu/api/decisions'
+        fetch('https://trace.computing.clemson.edu/api/decisions'
       ,{
         method:'PUT',
         body : outboundJSON
@@ -184,6 +184,12 @@ const ConfirmPage = (props) => {
         {response.status === 200 && <div>
           <h2>Submission complete</h2>
             <h4 style={{color: "#222222"}}>Thank you for registering. Your submission has been saved. We will be in contact with you about next steps. </h4>
+            <h4 style={{color: "#222222"}}>Please navigate to the following link and take the following survey about your experience. <a href={survey_link} target="_blank">{survey_link}</a></h4>
+            <p>You may close this tab after completing your survey.</p>
+            </div>}
+        {response.status === 201 && <div>
+          <h2>Submission complete</h2>
+            <h4 style={{color: "#222222"}}>You have been successfully opted out of the program. Your submission has been saved. We will be in contact with you about next steps. </h4>
             <h4 style={{color: "#222222"}}>Please navigate to the following link and take the following survey about your experience. <a href={survey_link} target="_blank">{survey_link}</a></h4>
             <p>You may close this tab after completing your survey.</p>
             </div>}

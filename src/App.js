@@ -19,7 +19,7 @@ function App() {
   // "teacherId": "1","randomId":"6tGlMJu98v"
   // Chris's code to fetch json from API------------------------
   const getData=()=>{
-    fetch('http://trace.computing.clemson.edu/api/users'
+    fetch('https://trace.computing.clemson.edu/api/users'
     ,{
       method:'POST',
       body : JSON.stringify({"teacherId": params.get('teacherId'),"randomId":params.get('randomId')})
