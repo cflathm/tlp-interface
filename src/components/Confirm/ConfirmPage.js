@@ -92,10 +92,11 @@ const ConfirmPage = (props) => {
           "Endorsement":false,
           "Microcredential":false
       }
-      let masters = {}
-      let endorsement = {}
+      let masters = false
+      let endorsement = false
       const microcredentials = []
       selections.forEach(selection =>{
+        console.log(selection)
         if(selection.category === undefined){
           microcredentials.push(selection)
         } else if(selection.category === "Endorsement"){
@@ -104,9 +105,12 @@ const ConfirmPage = (props) => {
           masters = selection
         }
       })
-      if(masters.length > 0){incumbentOutboundJSON["Master's Degree"] = masters}
-      if(endorsement.length > 0){incumbentOutboundJSON["Endorsement"] = endorsement}
-      if(microcredentials.length > 0){incumbentOutboundJSON["Microcredential"] = microcredentials}
+      incumbentOutboundJSON["Master's Degree"] = masters
+      incumbentOutboundJSON["Endorsement"] = endorsement
+      incumbentOutboundJSON["Microcredential"] = microcredentials
+      //if(masters.length != false){incumbentOutboundJSON["Master's Degree"] = masters}
+      //if(endorsement.length != false){incumbentOutboundJSON["Endorsement"] = endorsement}
+      //if(microcredentials.length > 0){incumbentOutboundJSON["Microcredential"] = microcredentials}
       console.log('incumbentOutboundJSON',incumbentOutboundJSON)
       return incumbentOutboundJSON
       }
