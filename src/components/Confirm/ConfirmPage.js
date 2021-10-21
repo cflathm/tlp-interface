@@ -175,6 +175,7 @@ const ConfirmPage = (props) => {
   }
 
   const PostSubmit = () => {
+    survey_link = 'https://https://google.com?teacherId=' + props.userInfo.teacherId
     return <React.Fragment>
       {console.log(response)}
         {response.status === 501 && <div>
@@ -183,7 +184,7 @@ const ConfirmPage = (props) => {
         {response.status === 200 && <div>
           <h2>Submission complete</h2>
             <h4 style={{color: "#222222"}}>Thank you for registering. Your submission has been saved. We will be in contact with you about next steps. </h4>
-            <h4 style={{color: "#222222"}}>Please navigate to the following link and take the following survey about your experience. <a>https://google.com?teacherId={props.userInfo.teacherId}</a></h4>
+            <h4 style={{color: "#222222"}}>Please navigate to the following link and take the following survey about your experience. <a href={survey_link} target="_blank">{survey_link}</a></h4>
             <p>You may close this tab after completing your survey.</p>
             </div>}
       </React.Fragment>
