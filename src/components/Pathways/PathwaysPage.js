@@ -63,7 +63,7 @@ const PathwaysPage = (props) => {
           <h4 style={{color:"red"}}>Non-Stem Teachers, please be aware that you will not receive your course funds until you take either the STEAM Endorsement or Microcredential</h4>
 
           <h3>Endorsements</h3>
-          <h4 style={{color:"grey"}}>A specialized track of pathways that results in a certificate (can optionally be combined with up to 3 micro-credentials)</h4>
+          <h4 style={{color:"grey"}}>A specialized track of pathways that results in a certificate after the completion of FOUR courses (can optionally be combined with up to 3 micro-credentials)</h4>
           <EndorsementsTable 
             endorsements={props.pathways["Endorsement"]} 
             allOptions={props.allOptions} 
@@ -72,7 +72,7 @@ const PathwaysPage = (props) => {
             tablesEnabled={tablesEnabled}
           />
           <h3>Micro-credentials</h3>
-          <h4 style={{color:"grey"}}>Short modules on a specific topic (you can select 1-2 per period, or optionally add max. 1 per period to an MEd or endorsement)</h4>
+          <h4 style={{color:"grey"}}>Short modules on a specific topic consisting of three 1-hour courses that can be taken independently (you can select 1-2 per period, or optionally add max. 1 per period to an MEd or endorsement)</h4>
           <MicrocredentialsTable 
             pathways={props} 
             setSelectedMicrocredential={setSelectedMicrocredential} 

@@ -179,7 +179,7 @@ const ConfirmPage = (props) => {
   }
 
   const PostSubmit = () => {
-    const survey_link = 'https://google.com?teacherId=' + props.userInfo.teacherId
+    const survey_link = 'https://clemson.ca1.qualtrics.com/jfe/form/SV_6n8zm56JYqAwdCK?teacherID=' + props.userInfo.teacherId
     return <React.Fragment>
       {console.log(response)}
         {response.status === 501 && <div>
