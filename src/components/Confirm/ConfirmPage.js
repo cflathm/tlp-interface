@@ -180,6 +180,12 @@ const ConfirmPage = (props) => {
 
   const PostSubmit = () => {
     const survey_link = 'https://clemson.ca1.qualtrics.com/jfe/form/SV_6n8zm56JYqAwdCK?teacherID=' + props.userInfo.teacherId
+    // TODO add reading the response with the data created by the backend. The structure will be as follows
+    // you only need to read this number in the 200 response, since the 201 is an opt-out and the 501 is an error.
+    // {
+    //  pathway: 'name of pathway',
+    //  microcredentials: ['array','of','microcredential names'],
+    // }
     return <React.Fragment>
       {console.log(response)}
         {response.status === 501 && <div>

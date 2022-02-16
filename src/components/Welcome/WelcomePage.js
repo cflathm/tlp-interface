@@ -19,7 +19,7 @@ const WelcomePage = (props) => {
           <br></br>
           <img src={exp_img[exp_index]}/>
           <h3>Your recommendations are ready, {props.firstName}.</h3>
-          <h4 style={{color: "#222222"}}>Thank you for participating in the first iteration of the Clemson Teacher Learning Pathways (TLP) recommender system. The <b>{exp_text[exp_index]}</b> has analyzed your prefrences and information and calculated the most relevant professional development options for you.</h4>
+          <h4 style={{color: "#222222"}}>Thank you for participating in the first iteration of Clemson University's Teacher Learning Progression (CU-TLP) recommender system. The <b>{exp_text[exp_index]}</b> has analyzed your prefrences and information and calculated the most relevant professional development options for you.</h4>
           <br></br>
           <h4 style={{color: "#222222"}}>In the following pages, you can view your recommendations and other options that you can pursue. Recommended pathways will be provided, consisting of multiple required courses within a recommended pathway. Then, you will select options that interests you and sign the commitment form.</h4>
           <Link className="next-link" to="/recommendations">

@@ -19,12 +19,13 @@ const RecommendationsPage = (props) => {
             <h2>Your Recommendations</h2>
             <img src={exp_img[exp_index]}/>
             <h4 style={{color: "#222222"}}>The <b>{exp_text[exp_index]}</b> generated the following recommendations based on your profile. These recommendations are for professional development pathways, which consist of multiple required courses. These recommendations are ranked, so that the first recommendation is expected to suit you most.</h4>
+            <h4 tyle={{color:"222222"}}>Please review you recommendations here and continue on to the next page to begin selecting options you would like to take.</h4>
             <RecommendationsList recommendations={props.recommendations}/>
             <Link className="next-link" to="/" style={{float: "left"}}>
               <Button type="primary">Back</Button>
             </Link>
             <Link className="next-link" to="/pathways">
-              <Button type="primary">Select a Pathway</Button>
+              <Button type="primary">View Options and Make Selections</Button>
             </Link>
         </div> 
       </React.Fragment>
