@@ -162,7 +162,7 @@ import { Table, Checkbox } from 'antd';
         width: '180px'
       },
       {
-        title: 'Spring 1 2022',
+        title: 'Summer 2 2022',
         dataIndex: 'spring22_1',
         key: 'spring22_1',
         render: (value, record, rowIndex) => (
@@ -175,7 +175,7 @@ import { Table, Checkbox } from 'antd';
         )
       },
       {
-        title: 'Spring 2 2022',
+        title: 'Fall 1 2022',
         dataIndex: 'spring22_2',
         key: 'spring22_2',
         render: (value, record, rowIndex) => (
@@ -188,7 +188,7 @@ import { Table, Checkbox } from 'antd';
         )
       },
       {
-        title: 'Summer 1 2022',
+        title: 'Fall 2 2022',
         dataIndex: 'summer22_1',
         key: 'summer22_1',
         render: (value, record, rowIndex) => (
