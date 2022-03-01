@@ -58,6 +58,8 @@ const ConfirmPage = (props) => {
   const [submittedState, setSubmittedState] = useState(false)
   const [outboundJSON, setOutboundJSON] = useState({})
   const [response, setResponse] = useState({})
+  const [receiptData, setReceiptData] = useState({})
+
 
 
   const sendData=()=>{
@@ -69,19 +71,15 @@ const ConfirmPage = (props) => {
       }
       ).then(function(response){
           setResponse(response)
-          // console.log('response',response);
-          // return response.json();
+          // console.log('response inside sendData',response);
+          return response.json();
         })
         .then(function(responseJSON) {
-          // console.log('responseJSON',responseJSON);
+          console.log('responseJSON',responseJSON);
+          setReceiptData(responseJSON)
         })
     }
   }
-
-  // useEffect(()=>{
-    
-  // },[response])
-
 
   const setJSON = () => {
       if(!optingOut){
@@ -96,7 +94,6 @@ const ConfirmPage = (props) => {
       let endorsement = false
       const microcredentials = []
       selections.forEach(selection =>{
-        console.log(selection)
         if(selection.category === undefined){
           microcredentials.push(selection)
         } else if(selection.category === "Endorsement"){
@@ -108,9 +105,6 @@ const ConfirmPage = (props) => {
       incumbentOutboundJSON["Master's Degree"] = masters
       incumbentOutboundJSON["Endorsement"] = endorsement
       incumbentOutboundJSON["Microcredential"] = microcredentials
-      //if(masters.length != false){incumbentOutboundJSON["Master's Degree"] = masters}
-      //if(endorsement.length != false){incumbentOutboundJSON["Endorsement"] = endorsement}
-      //if(microcredentials.length > 0){incumbentOutboundJSON["Microcredential"] = microcredentials}
       console.log('incumbentOutboundJSON',incumbentOutboundJSON)
       return incumbentOutboundJSON
       }
@@ -121,7 +115,6 @@ const ConfirmPage = (props) => {
   // ----------------------------------------------------------------------------------------------------
 
   const PreSubmit = () => {
-    // console.log('selections',selections)
     return <React.Fragment>
       <h2>Commitment Form and Pathway Selection</h2>
         <h4 style={{color: "#222222"}}>Confirm your schedule and submit</h4>
@@ -169,7 +162,6 @@ const ConfirmPage = (props) => {
         </div>
         <div className="next-link">
           {submitReady ? <Button type="primary" onClick={() => {
-            // console.log('setJSON()',setJSON())
             setOutboundJSON(JSON.stringify(setJSON()))
             setSubmittedState(true)
           }
@@ -180,23 +172,34 @@ const ConfirmPage = (props) => {
 
   const PostSubmit = () => {
     const survey_link = 'https://clemson.ca1.qualtrics.com/jfe/form/SV_6n8zm56JYqAwdCK?teacherID=' + props.userInfo.teacherId
-    // TODO add reading the response with the data created by the backend. The structure will be as follows
-    // you only need to read this number in the 200 response, since the 201 is an opt-out and the 501 is an error.
-    // {
-    //  pathway: 'name of pathway',
-    //  microcredentials: ['array','of','microcredential names'],
-    // }
-    return <React.Fragment>
-      {console.log(response)}
-        {response.status === 501 && <div>
-          <h2>Submission Error</h2>
-            <h4 style={{color: "#222222"}}>It appears as if you have already completed the commitment form. If you beleive this to be an error or wish to change your selections please contact Stephanie Madision. Email: <a href="mailto:stephm@g.clemson.edu">stephm@g.clemson.edu</a></h4></div>}
-        {response.status === 200 && <div>
-          <h2>Submission complete</h2>
-            <h4 style={{color: "#222222"}}>Thank you for registering. Your submission has been saved. We will be in contact with you about next steps. </h4>
-            <h4 style={{color: "#222222"}}>Please navigate to the following link and take the following survey about your experience. <a href={survey_link} target="_blank">{survey_link}</a></h4>
-            <p>You may close this tab after completing your survey.</p>
-            </div>}
+    
+      return <React.Fragment>
+        {console.log('receiptData',receiptData)}
+          {response.status === 501 && <div>
+            <h2>Submission Error</h2>
+              <h4 style={{color: "#222222"}}>It appears as if you have already completed the commitment form. If you beleive this to be an error or wish to change your selections please contact Stephanie Madision. Email: <a href="mailto:stephm@g.clemson.edu">stephm@g.clemson.edu</a></h4></div>}
+          {response.status === 200 && <div>
+            <h2>Submission complete</h2>
+              <h4 style={{color: "#222222"}}>Thank you for registering. Your submission has been saved, and below is a table showing your selections. We will be in contact with you about next steps. </h4>
+  
+              {Object.keys(receiptData).length !== 0 && <div>
+          <h2>You've signed up for:</h2>
+              <ul>
+                {receiptData.data.pathway !== "None" &&<li>{ "One pathway: "+receiptData.data.pathway}</li> }
+                {receiptData.data.micros.length === 1 &&<li>{ "One Micro-Credential: " + receiptData.data.micros[0]}</li> }
+                {receiptData.data.micros.length > 1 &&<ul>
+                  {Object.keys(receiptData.data.micros).map((keyName, i) => (
+                    <li key={i}>
+                      <span>{receiptData.data.micros[keyName]}</span>
+                    </li>
+                  ))}
+                </ul>}
+              </ul>
+              </div>}
+              
+              <h4 style={{color: "#222222"}}>Please navigate to the following link and take the following survey about your experience. <a href={survey_link} target="_blank">{survey_link}</a></h4>
+              <p>You may close this tab after completing your survey.</p>
+              </div>}
         {response.status === 201 && <div>
           <h2>Submission complete</h2>
             <h4 style={{color: "#222222"}}>You have been successfully opted out of the program. Your submission has been saved. We will be in contact with you about next steps. </h4>
@@ -209,7 +212,7 @@ const ConfirmPage = (props) => {
       <React.Fragment>
         <div className="fullpage-card">
           <Banner/>
-          {submittedState ? <PostSubmit/>:<PreSubmit/>}
+          {submittedState ? <PostSubmit/>:<PreSubmit />}
         </div>
       </React.Fragment>)
 }

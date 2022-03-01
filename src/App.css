@@ -152,6 +152,7 @@ table tr td.ant-table-selection-column-microcredentials {
   font-weight:600;
   transition-duration: 50ms;
 }
+
 .recommended_1 {
   white-space: pre-wrap;
   background-color: rgb(208, 255, 217);
@@ -160,8 +161,8 @@ table tr td.ant-table-selection-column-microcredentials {
 }
 
 /* hide check all box at top of tables */
-.ant-table-thead tr .ant-table-selection-column div { 
-  display: none; 
+.ant-table-thead tr .ant-table-selection-column div {
+  display: none;
 }
 
 .disabled-row {
@@ -170,4 +171,16 @@ table tr td.ant-table-selection-column-microcredentials {
   color:rgb(120, 120, 120);
   transition-duration: 50ms;
   transition-property: background-color;
+}
+
+/* ---------------------------Used first in Confirm Page--------------------------- */
+#root > div > div.fullpage-card > div > div > ul > li::marker {
+  color: #522D80;
+  content: "- ";
+  font-size: 100%;
+}
+#root > div > div.fullpage-card > div > div > ul > ul > li::marker {
+  color: hsl(270, 67%, 80%);
+  content: "> ";
+  font-size: 90%;
 }
