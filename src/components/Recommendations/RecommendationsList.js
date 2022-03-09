@@ -2,6 +2,8 @@ import React from 'react';
 import { List } from 'antd';
 
 const RecommendationsList = (props) => {
+  const exp_index=props.Exp_Condition_2-1
+  const exp_text = ["Why might this be a good choice?","This is a good choice because:"]
   return (
     <div>
       <List
@@ -14,7 +16,7 @@ const RecommendationsList = (props) => {
               // title={<a href="https://ant.design">{item.name}</a>}
 
               title={<p>Recommendation #{item.rec_pos}: <b>{item.name}</b></p>}
-              description={item.justification ? <p><b>Why is this a good choice? </b>{item.justification}</p>: ''}
+              description={item.justification ? <p><b>{exp_text[exp_index]} </b>{item.justification}</p>: ''}
               className={("recommended_"+item.rec_pos)}
             />
           </List.Item>

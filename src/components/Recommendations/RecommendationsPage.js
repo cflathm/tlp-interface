@@ -7,7 +7,7 @@ import AI from '../../images/ai.png';
 import Human from '../../images/human.png';
 
 const RecommendationsPage = (props) => {
-  const exp_index=props.Exp_Condition-1
+  const exp_index=props.Exp_Condition_1-1
   const exp_text = ["AI-algorithm","expert"]
   const exp_img = [AI,Human]
   // <b>{exp_text[exp_index]}</b>
