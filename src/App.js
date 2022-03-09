@@ -93,8 +93,8 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Route path="/" exact component={() => data && <WelcomePage firstName={data.data.First_Name} Exp_Condition={data.data.Exp_Condition} />} />
-        <Route path="/recommendations" exact component={() => data && <RecommendationsPage recommendations={data.data.recommendations} Exp_Condition={data.data.Exp_Condition}/>} />
+        <Route path="/" exact component={() => data && <WelcomePage firstName={data.data.First_Name} Exp_Condition_1={data.data.Exp_Condition_1} />} />
+        <Route path="/recommendations" exact component={() => data && <RecommendationsPage recommendations={data.data.recommendations} Exp_Condition_1={data.data.Exp_Condition_1} Exp_Condition_2={data.data.Exp_Condition_2}/>} />
         <Route path="/pathways" exact component={() => data && <PathwaysPage pathways={data.data.options} allOptions={allOptions}/>} />
         <Route path="/confirm" exact component={() => data && <ConfirmPage allOptions={allOptions} userInfo={{"teacherId": params.get('teacherId'),"randomId":params.get('randomId')}}/>} />
       </Router>
