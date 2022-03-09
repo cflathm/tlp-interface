@@ -11,7 +11,7 @@ const WelcomePage = (props) => {
   const exp_index=props.Exp_Condition_1-1
   const exp_text = ["algorithm-based system","expert"]
   const exp_img = [AI,Human]
-  console.log("hello there ")
+  console.log("index",exp_index)
     return (
       <React.Fragment>
         <div className="fullpage-card">
