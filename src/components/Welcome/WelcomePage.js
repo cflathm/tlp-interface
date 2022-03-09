@@ -8,7 +8,7 @@ import Human from '../../images/human.png';
 
 
 const WelcomePage = (props) => {
-  const exp_index=props.Exp_Condition_1-1
+  const exp_index=props.Exp_Condition_1
   const exp_text = ["algorithm-based system","expert"]
   const exp_img = [AI,Human]
   console.log("index",exp_index)
