@@ -177,7 +177,7 @@ const ConfirmPage = (props) => {
         {console.log('receiptData',receiptData)}
           {response.status === 501 && <div>
             <h2>Submission Error</h2>
-              <h4 style={{color: "#222222"}}>It appears as if you have already completed the commitment form. If you beleive this to be an error or wish to change your selections please contact Stephanie Madision. Email: <a href="mailto:stephm@g.clemson.edu">stephm@g.clemson.edu</a></h4></div>}
+              <h4 style={{color: "#222222"}}>It appears as if you have already completed the commitment form. If you believe this to be an error or wish to change your selections please contact Stephanie Madison. Email: <a href="mailto:stephm@g.clemson.edu">stephm@g.clemson.edu</a></h4></div>}
           {response.status === 200 && <div>
             <h2>Submission complete</h2>
               <h4 style={{color: "#222222"}}>Thank you for registering. Your submission has been saved, and below is a table showing your selections. We will be in contact with you about next steps. </h4>
