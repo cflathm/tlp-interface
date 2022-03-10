@@ -3,7 +3,7 @@ import { List } from 'antd';
 
 const RecommendationsList = (props) => {
   const exp_index=props.Exp_Condition_2-1
-  const exp_text = ["Why might this be a good choice?","This is a good choice because:"]
+  const exp_text = ["Why this might be a good choice:","This is a good choice because:"]
   return (
     <div>
       <List
