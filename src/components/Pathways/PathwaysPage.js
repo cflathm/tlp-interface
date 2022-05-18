@@ -52,7 +52,7 @@ const PathwaysPage = (props) => {
 
           <h3>Master's Degrees</h3>
           <h4 style={{color:"grey"}}>A 5-semester commitment that results in a degree (can optionally be combined with up to 3 micro-credentials)</h4>
-          <h5 style={{color:"grey"}}>*Restricted to Stem teachers</h5>
+          <h5 style={{color:"red"}}>*Restricted to Stem teachers</h5>
           <MastersDegreeTable 
             mastersDegrees={props.pathways["Master's Degree"]} 
             setSelectedMastersDegree={setSelectedMastersDegree}
@@ -64,6 +64,7 @@ const PathwaysPage = (props) => {
 
           <h3>Endorsements</h3>
           <h4 style={{color:"grey"}}>A specialized track of pathways that results in a certificate after the completion of FOUR courses (can optionally be combined with up to 3 micro-credentials)</h4>
+          <h3 style={{color:"red"}}>ENDORSEMENTS CONSIST OF 4 COURSES (12 hours total) PLEASE BE AWARE THAT NOT ALL COURSES ARE SHOWN BELOW AS THE TIMELINE BELOW FOCUSSES ON PROGRAM START TIMES.</h3>
           <EndorsementsTable 
             endorsements={props.pathways["Endorsement"]} 
             allOptions={props.allOptions} 

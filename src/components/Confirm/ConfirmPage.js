@@ -181,7 +181,7 @@ const ConfirmPage = (props) => {
           {response.status === 200 && <div>
             <h2>Submission complete</h2>
               <h4 style={{color: "#222222"}}>Thank you for registering. Your submission has been saved, and below is a table showing your selections. We will be in contact with you about next steps. </h4>
-              <h4 style={{color: "#222222"}}>Before leaving, please click the following link to take a survey about your experience. <a href={survey_link} target="_blank">{survey_link}</a></h4>
+              <h3 style={{color: "#FF1010"}}>TO FINISH THE RECOMMENDATION PROCESS, NAVIGATE TO AND TAKE THE SURVEY AT THE FOLOWING LINK <a href={survey_link} target="_blank">{survey_link}</a></h3>
 
               {Object.keys(receiptData).length !== 0 && <div>
           <h2>You've signed up for:</h2>
