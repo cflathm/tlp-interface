@@ -52,7 +52,8 @@ const PathwaysPage = (props) => {
 
           <h3>Master's Degrees</h3>
           <h4 style={{color:"grey"}}>A 5-semester commitment that results in a degree (can optionally be combined with up to 3 micro-credentials)</h4>
-          <h5 style={{color:"red"}}>*Restricted to Stem teachers</h5>
+          <h5 style={{color:"red"}}>*Unfortunately, the specializations Effective and Reflective Teaching and Instructional Coaching have reached capacity for 2022-2033 enrollment and are not available at this time.</h5>
+          <h5 style={{color:"red"}}>**Restricted to Stem teachers</h5>
           <MastersDegreeTable 
             mastersDegrees={props.pathways["Master's Degree"]} 
             setSelectedMastersDegree={setSelectedMastersDegree}
